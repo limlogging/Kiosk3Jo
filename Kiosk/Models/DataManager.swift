@@ -9,23 +9,17 @@ import UIKit
 
 
 class DataManager {
-    var MacArray: [Mac] = []
-    var IphoneArray: [Iphone] = []
-    var IpadArray: [Ipad] = []
-    var WatchArray: [Watch] = []
-    var EtcArray: [Etc] = []
+    var products: [AppleProduct] = []
     
-    func makeProductData() {
-        MacArray = [Mac(title: "Mac", description: "test", price: 1000000),
-                    Mac(title: "test", description: "test", price: 1300000)]
-        
-        IphoneArray = [Iphone(title: "Iphone", description: "test", price: 10000000)]
-        
-        IpadArray = [Ipad(title: "Ipad", description: "test", price: 10900000)]
-        
-        WatchArray = [Watch(title: "Watch", description: "test", price: 10900000)]
-        
-        EtcArray = [Etc(title: "Etc", description: "test", price: 10900000)]
+    init() {
+        let macBook = AppleProduct(image: UIImage(named: "macBook"), name: "macBook Pro", price: 2000000, category: "맥북")
+        let iPhone = AppleProduct(image: UIImage(named: "macBook"), name: "iPhone 12", price: 1000000, category: "아이폰")
+        let iPad = AppleProduct(image: UIImage(named: "macBook"), name: "iPad Pro", price: 800000, category: "패드")
+        let appleWatch = AppleProduct(image: UIImage(named: "macBook"), name: "Apple Watch Series 6", price: 500000, category: "워치")
+        let etcAccessory = AppleProduct(image: UIImage(named: "macBook"), name: "AirPods Pro", price: 300000, category: "악세사리")
+
+        products = [macBook, iPhone, iPad, appleWatch, etcAccessory]
     }
-    
 }
+
+
