@@ -72,7 +72,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 // MARK: - collectionview 내 셀 크기 커스텀
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width / 2 - 15
+        let width = collectionView.bounds.width / 2
         let height: CGFloat = 200
         return CGSize(width: width, height: height)
     }
