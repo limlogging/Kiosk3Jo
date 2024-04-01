@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611A54142BBA84190013E81E /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 611A54132BBA84190013E81E /* PriceCell.xib */; };
+		611A54152BBA84190013E81E /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A54122BBA84190013E81E /* PriceCell.swift */; };
+		611A54172BBA86C30013E81E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611A54162BBA86C30013E81E /* Constants.swift */; };
+		614FE7EA2BBA8B7700C54731 /* AppleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FE7E92BBA8B7700C54731 /* AppleProduct.swift */; };
 		9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */; };
 		9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */; };
 		9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D962BBA4BF6000AB9DA /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		611A54122BBA84190013E81E /* PriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
+		611A54132BBA84190013E81E /* PriceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
+		611A54162BBA86C30013E81E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		614FE7E92BBA8B7700C54731 /* AppleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProduct.swift; sourceTree = "<group>"; };
 		9C252D8F2BBA4BF6000AB9DA /* Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		611A540F2BBA83D70013E81E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				614FE7E92BBA8B7700C54731 /* AppleProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		611A54102BBA83DF0013E81E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				611A54122BBA84190013E81E /* PriceCell.swift */,
+				611A54132BBA84190013E81E /* PriceCell.xib */,
+				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		611A54112BBA83EE0013E81E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C252D962BBA4BF6000AB9DA /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9C252D862BBA4BF6000AB9DA = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +92,16 @@
 		9C252D912BBA4BF6000AB9DA /* Kiosk */ = {
 			isa = PBXGroup;
 			children = (
+				611A540F2BBA83D70013E81E /* Model */,
+				611A54102BBA83DF0013E81E /* View */,
+				611A54112BBA83EE0013E81E /* Controller */,
 				9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */,
 				9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */,
-				9C252D962BBA4BF6000AB9DA /* ViewController.swift */,
-				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
 				9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */,
 				9C252DA02BBA4BF7000AB9DA /* LaunchScreen.storyboard */,
 				9C252DA32BBA4BF7000AB9DA /* Info.plist */,
 				9C252D9B2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld */,
+				611A54162BBA86C30013E81E /* Constants.swift */,
 			);
 			path = Kiosk;
 			sourceTree = "<group>";
@@ -129,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C252D9F2BBA4BF7000AB9DA /* Assets.xcassets in Resources */,
+				611A54142BBA84190013E81E /* PriceCell.xib in Resources */,
 				9C252DA22BBA4BF7000AB9DA /* Base in Resources */,
 				9C252D9A2BBA4BF6000AB9DA /* Base in Resources */,
 			);
@@ -142,8 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */,
+				611A54172BBA86C30013E81E /* Constants.swift in Sources */,
 				9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */,
+				614FE7EA2BBA8B7700C54731 /* AppleProduct.swift in Sources */,
 				9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */,
+				611A54152BBA84190013E81E /* PriceCell.swift in Sources */,
 				9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
