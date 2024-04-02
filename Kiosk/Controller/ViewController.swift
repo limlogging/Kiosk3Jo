@@ -84,3 +84,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
+// MARK: - 상품탭 collectionview , 합산 tableview 연결
+//func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    selectedList.append(filteredProducts[indexPath.item])
+//
+//    if selectedList.map({$0.name}).filter({$0 == filteredProducts[indexPath.item].name}).count == 2 {
+//      let alert = UIAlertController(title: “중복 선택 확인“, message: “중복으로 선택 되었습니다.“, preferredStyle: .alert)
+//      alert.addAction(UIAlertAction(title: “확인“, style: .cancel))
+//      selectedList.removeLast()
+//
+//      self.present(alert, animated: true)
+//    }
+//
+//    tableView.reloadData()
+//    getData()
+//}
