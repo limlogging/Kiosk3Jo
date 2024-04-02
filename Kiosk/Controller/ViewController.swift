@@ -21,21 +21,18 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
 // MARK: - viewDidLoad 설정
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
         productSegment.selectedSegmentIndex = 0
         segmentValueChanged(productSegment)
-        
     }
     
     func setupCollectionView() {
         let flowLayout = createFlowLayout()
         mainCollectionView.collectionViewLayout = flowLayout
+        
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
         mainCollectionView.register(ProductCell.self, forCellWithReuseIdentifier: "ProductCell")
@@ -58,48 +55,32 @@ class ViewController: UIViewController {
             default:
                 break
             }
-            
             mainCollectionView.reloadData()
         }
     
+// MARK: - collectionview cell 크기 조절
     func createFlowLayout() -> UICollectionViewFlowLayout {
-        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 100, height: 100)
-        layout.estimatedItemSize = CGSize(width: 100, height: 100)
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-
+        layout.itemSize = CGSize(width: 150, height: 100)
+        layout.estimatedItemSize = CGSize(width: 160, height: 200)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return layout
     }
 }
 
 // MARK: - collectionView delegate, datasource 확장
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredProducts.count
     }
+    
 // MARK: - collectionView 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
         let product = filteredProducts[indexPath.item]
         cell.configure(with: product)
         return cell
-    }
-}
-
-
-extension ViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let spacingBetweenCells: CGFloat = 10
-        let numberOfItemsPerRow: CGFloat = 2
-        let totalSpacing = (numberOfItemsPerRow - 1) * spacingBetweenCells
-        let width = (collectionView.bounds.width - totalSpacing) / numberOfItemsPerRow
-        let height = width
-        return CGSize(width: width, height: height)
     }
 }
 

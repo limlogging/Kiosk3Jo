@@ -121,30 +121,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D196DC82BBA835900311CAF /* Models */ = {
+		4D196DC82BBA835900311CAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4D196DCD2BBA84CB00311CAF /* Product.swift */,
 				4D196DCF2BBA85E100311CAF /* DataManager.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		4D196DC92BBA836200311CAF /* Views */ = {
+		4D196DC92BBA836200311CAF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
 				4D196DD52BBA9CCE00311CAF /* ProductCell.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		4D196DCA2BBA836800311CAF /* Controllers */ = {
+		4D196DCA2BBA836800311CAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				9C252D962BBA4BF6000AB9DA /* ViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		9C252D862BBA4BF6000AB9DA = {
@@ -169,14 +169,13 @@
 				9CB8224A2BBA8CF700F549A7 /* AppleImage */,
 				9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */,
 				9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */,
-				4D196DC82BBA835900311CAF /* Models */,
-				4D196DC92BBA836200311CAF /* Views */,
-				4D196DCA2BBA836800311CAF /* Controllers */,
+				4D196DC82BBA835900311CAF /* Model */,
+				4D196DC92BBA836200311CAF /* View */,
+				4D196DCA2BBA836800311CAF /* Controller */,
 				9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */,
 				9C252DA02BBA4BF7000AB9DA /* LaunchScreen.storyboard */,
 				9C252DA32BBA4BF7000AB9DA /* Info.plist */,
 				9C252D9B2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld */,
-				4D1E72922BBAD45C0039BB62 /* .gitignore */,
 			);
 			path = Kiosk;
 			sourceTree = "<group>";
@@ -346,7 +345,6 @@
 				9CB8228C2BBA8D0500F549A7 /* iPadMini.png in Resources */,
 				9CB8228D2BBA8D0500F549A7 /* iPadPro11.png in Resources */,
 				9CB822952BBA8D0500F549A7 /* MagicMouse.png in Resources */,
-				4D1E72932BBAD45C0039BB62 /* .gitignore in Resources */,
 				9CB8227D2BBA8D0500F549A7 /* MacPro.jpeg in Resources */,
 				9CB822922BBA8D0500F549A7 /* Keyboard.jpeg in Resources */,
 				9CB822822BBA8D0500F549A7 /* iPhone14.jpeg in Resources */,

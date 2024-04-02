@@ -37,7 +37,6 @@ class DataManager {
                             AppleProduct(image: UIImage(named: "iPhone"), name: "AirPods Pro", price: 300000, category: "악세사리"),
                             AppleProduct(image: UIImage(named: "iPhone"), name: "AirPods Pro", price: 300000, category: "악세사리")]
         
-        
         products.append(contentsOf: macBook)
         products.append(contentsOf: iPhone)
         products.append(contentsOf: iPad)
@@ -45,8 +44,3 @@ class DataManager {
         products.append(contentsOf: etcAccessory)
     }
 }
-
-
-//numberFormatter
-// .데시벨
-//

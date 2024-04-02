@@ -47,7 +47,7 @@ class ProductCell: UICollectionViewCell {
             productImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 150),
-            productImage.widthAnchor.constraint(equalToConstant: 150), // 이미지 높이 조정
+            productImage.widthAnchor.constraint(equalToConstant: 150),
             
             productLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 8),
             productLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
@@ -56,7 +56,7 @@ class ProductCell: UICollectionViewCell {
             productPrice.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 4),
             productPrice.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             productPrice.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            productPrice.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8) // 여백 조정
+            productPrice.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
     
@@ -76,5 +76,3 @@ class ProductCell: UICollectionViewCell {
         }
     }
 }
-
-
