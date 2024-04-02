@@ -8,131 +8,94 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    @IBOutlet weak var mainCollectionView: UICollectionView!
+    @IBOutlet weak var productSegment: UISegmentedControl!
     
+    let dataManager = DataManager()
+    let cellMarginSize: CGFloat = 2.0
     
-    @IBOutlet weak var tableView: UITableView!
+    var filteredProducts: [AppleProduct] = [] {
+        didSet {
+            mainCollectionView.reloadData()
+        }
+    }
     
-    @IBOutlet weak var countLabel: UILabel!
-    
-    @IBOutlet weak var priceLabel: UILabel!
-    
-    var selectedList: [AppleProduct] = [AppleProduct]()
-    
-    
-    var totalCount = 0
-    var totalPrice = 0
-    
-    
+// MARK: - viewDidLoad 설정
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.rowHeight = 75
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: Constants.cellName, bundle: nil), forCellReuseIdentifier: Constants.cellName)
-
-        selectedList.append(macBook)
-        selectedList.append(iPhone)
-        selectedList.append(iPad)
-        selectedList.append(appleWatch)
-        selectedList.append(etcAccessory)
-        
-        tableView.reloadData()
+        setupCollectionView()
+        productSegment.selectedSegmentIndex = 0
+        segmentValueChanged(productSegment)
     }
     
-    
-    // MacBook 데이터
-    let macBook = AppleProduct(image: UIImage(named: "iPhone15ProMax"), name: "MacBook Pro", price: 2000000, value: 1)
-    
-    // iPhone 데이터
-    let iPhone = AppleProduct(image: UIImage(named: "iPhone15ProMax"), name: "iPhone 12", price: 1000000, value: 1)
-    
-    // iPad 데이터
-    let iPad = AppleProduct(image: UIImage(named: "iPhone15ProMax"), name: "iPad Pro", price: 800000, value: 1)
-    
-    // Apple Watch 데이터
-    let appleWatch = AppleProduct(image: UIImage(named: "iPhone15ProMax"), name: "Apple Watch Series 6", price: 500000, value: 1)
-    
-    // 기타 액세서리 데이터
-    let etcAccessory = AppleProduct(image: UIImage(named: "iPhone15ProMax"), name: "AirPods Pro", price: 300000, value: 1)
-    
-    func getData() {
+    func setupCollectionView() {
+        let flowLayout = createFlowLayout()
+        mainCollectionView.collectionViewLayout = flowLayout
         
-        totalCount = selectedList.map{$0.value}.reduce(0, +)
-        totalPrice = selectedList.map{Int($0.value * $0.price)}.reduce(0, +)
-        
-        priceLabel.text = "\(String(totalPrice)) 원"
-        countLabel.text = "\(String(totalCount)) 개"
+        mainCollectionView.dataSource = self
+        mainCollectionView.delegate = self
+        mainCollectionView.register(ProductCell.self, forCellWithReuseIdentifier: "ProductCell")
+        mainCollectionView.alwaysBounceVertical = true
     }
     
+// MARK: - sege, 컬렉션 뷰 연결
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                filteredProducts = dataManager.products.filter { $0.category == "맥북" }
+            case 1:
+                filteredProducts = dataManager.products.filter { $0.category == "아이폰" }
+            case 2:
+                filteredProducts = dataManager.products.filter { $0.category == "패드" }
+            case 3:
+                filteredProducts = dataManager.products.filter { $0.category == "워치" }
+            case 4:
+                filteredProducts = dataManager.products.filter { $0.category == "악세사리" }
+            default:
+                break
+            }
+            mainCollectionView.reloadData()
+        }
+    
+// MARK: - collectionview cell 크기 조절
+    func createFlowLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 150, height: 100)
+        layout.estimatedItemSize = CGSize(width: 160, height: 200)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        return layout
+    }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return selectedList.count
+// MARK: - collectionView delegate, datasource 확장
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filteredProducts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let currentLocation = indexPath.row
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as? PriceCell else { return UITableViewCell()
-        }
-        
-        cell.selectionStyle = .none
-        cell.titleLabel.text = selectedList[currentLocation].name
-        cell.itemImage.image = selectedList[currentLocation].image
-        cell.priceLabel.text = String(selectedList[currentLocation].price)
-        cell.valueLabel.text = String(selectedList[currentLocation].value)
-        
-        cell.minusBtn.tag = currentLocation
-        cell.plusBtn.tag = currentLocation
-        cell.deleteBtn.tag = currentLocation
-        
-        cell.minusBtn.addTarget(self, action: #selector(minusValue), for: .touchUpInside)
-        cell.plusBtn.addTarget(self, action: #selector(plusValue), for: .touchUpInside)
-        cell.deleteBtn.addTarget(self, action: #selector(deleteValue), for: .touchUpInside)
-        
+// MARK: - collectionView 셀 설정
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        let product = filteredProducts[indexPath.item]
+        cell.configure(with: product)
         return cell
     }
-    
-    @objc func minusValue(sender: UIButton) {
-        var currentValue = selectedList[sender.tag].value
-        if let cell = tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? PriceCell {
-            if currentValue != 1 {
-                currentValue -= 1
-                selectedList[sender.tag].value = currentValue
-                cell.valueLabel.text = String(currentValue)
-                getData()
-            } else {
-                currentValue = 1
-            }
-        }
-        
-    }
-    
-    @objc func plusValue(sender: UIButton) {
-        var currentValue = selectedList[sender.tag].value
-        
-        if let cell = tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? PriceCell {
-            
-            currentValue += 1
-            selectedList[sender.tag].value = currentValue
-            cell.valueLabel.text = String(currentValue)
-            
-            getData()
-        }
-    }
-    
-    @objc func deleteValue(sender: UIButton) {
-    
-        selectedList.remove(at: sender.tag)
-        tableView.reloadData()
-        getData()
-        
-    }
 }
 
-
+// MARK: - 상품탭 collectionview , 합산 tableview 연결
+//func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    selectedList.append(filteredProducts[indexPath.item])
+//
+//    if selectedList.map({$0.name}).filter({$0 == filteredProducts[indexPath.item].name}).count == 2 {
+//      let alert = UIAlertController(title: “중복 선택 확인“, message: “중복으로 선택 되었습니다.“, preferredStyle: .alert)
+//      alert.addAction(UIAlertAction(title: “확인“, style: .cancel))
+//      selectedList.removeLast()
+//
+//      self.present(alert, animated: true)
+//    }
+//
+//    tableView.reloadData()
+//    getData()
+//}
