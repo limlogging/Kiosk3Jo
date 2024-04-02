@@ -13,23 +13,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var productSegment: UISegmentedControl!
     
     let dataManager = DataManager()
+    let cellMarginSize: CGFloat = 2.0
     
     var filteredProducts: [AppleProduct] = [] {
         didSet {
             mainCollectionView.reloadData()
         }
     }
-
+    
+    
+    
 // MARK: - viewDidLoad 설정
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainCollectionView.dataSource = self
-        mainCollectionView.delegate = self
-        
-        mainCollectionView.register(ProductCell.self, forCellWithReuseIdentifier: "ProductCell")
+        setupCollectionView()
         
         productSegment.selectedSegmentIndex = 0
         segmentValueChanged(productSegment)
+        
+    }
+    
+    func setupCollectionView() {
+        let flowLayout = createFlowLayout()
+        mainCollectionView.collectionViewLayout = flowLayout
+        mainCollectionView.dataSource = self
+        mainCollectionView.delegate = self
+        mainCollectionView.register(ProductCell.self, forCellWithReuseIdentifier: "ProductCell")
+        mainCollectionView.alwaysBounceVertical = true
     }
     
 // MARK: - sege, 컬렉션 뷰 연결
@@ -51,10 +61,23 @@ class ViewController: UIViewController {
             
             mainCollectionView.reloadData()
         }
+    
+    func createFlowLayout() -> UICollectionViewFlowLayout {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.estimatedItemSize = CGSize(width: 100, height: 100)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
+        return layout
+    }
 }
 
 // MARK: - collectionView delegate, datasource 확장
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredProducts.count
@@ -69,12 +92,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 
-// MARK: - collectionview 내 셀 크기 커스텀
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width / 2
-        let height: CGFloat = 200
+        let spacingBetweenCells: CGFloat = 10
+        let numberOfItemsPerRow: CGFloat = 2
+        let totalSpacing = (numberOfItemsPerRow - 1) * spacingBetweenCells
+        let width = (collectionView.bounds.width - totalSpacing) / numberOfItemsPerRow
+        let height = width
         return CGSize(width: width, height: height)
     }
-
 }
+
