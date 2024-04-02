@@ -1,1 +1,6 @@
+# Xcode
+**/xcuserdata/*.xcuserdatad/
+**/*.xcworkspace/xcuserdata/*.xcuserdatad/
+
+# macOS
 .DS_Store
