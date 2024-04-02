@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D196DCE2BBA84CB00311CAF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DCD2BBA84CB00311CAF /* Product.swift */; };
 		4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DCF2BBA85E100311CAF /* DataManager.swift */; };
 		4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DD52BBA9CCE00311CAF /* ProductCell.swift */; };
 		9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */; };
@@ -17,6 +16,10 @@
 		9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D9B2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld */; };
 		9C252D9F2BBA4BF7000AB9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */; };
 		9C252DA22BBA4BF7000AB9DA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9C252DA12BBA4BF7000AB9DA /* Base */; };
+		9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8558262BBC607E00375397 /* AppleProduct.swift */; };
+		9C85582A2BBC60CF00375397 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8558282BBC60CF00375397 /* PriceCell.swift */; };
+		9C85582B2BBC60CF00375397 /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C8558292BBC60CF00375397 /* PriceCell.xib */; };
+		9C85582D2BBC63C700375397 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85582C2BBC63C700375397 /* Constants.swift */; };
 		9CB822762BBA8D0500F549A7 /* iMac.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8224B2BBA8D0500F549A7 /* iMac.png */; };
 		9CB822772BBA8D0500F549A7 /* MacBookAir13(M2).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8224C2BBA8D0500F549A7 /* MacBookAir13(M2).png */; };
 		9CB822782BBA8D0500F549A7 /* MacBookAir13(M3).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8224D2BBA8D0500F549A7 /* MacBookAir13(M3).png */; };
@@ -58,7 +61,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D196DCD2BBA84CB00311CAF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		4D196DCF2BBA85E100311CAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4D196DD52BBA9CCE00311CAF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		9C252D8F2BBA4BF6000AB9DA /* Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,10 @@
 		9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C252DA12BBA4BF7000AB9DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C252DA32BBA4BF7000AB9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C8558262BBC607E00375397 /* AppleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProduct.swift; sourceTree = "<group>"; };
+		9C8558282BBC60CF00375397 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceCell.swift; path = "../../../../../../../Downloads/Kiosk3Jo-dongik/Kiosk/View/PriceCell.swift"; sourceTree = "<group>"; };
+		9C8558292BBC60CF00375397 /* PriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PriceCell.xib; path = "../../../../../../../Downloads/Kiosk3Jo-dongik/Kiosk/View/PriceCell.xib"; sourceTree = "<group>"; };
+		9C85582C2BBC63C700375397 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9CB8224B2BBA8D0500F549A7 /* iMac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iMac.png; sourceTree = "<group>"; };
 		9CB8224C2BBA8D0500F549A7 /* MacBookAir13(M2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MacBookAir13(M2).png"; sourceTree = "<group>"; };
 		9CB8224D2BBA8D0500F549A7 /* MacBookAir13(M3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MacBookAir13(M3).png"; sourceTree = "<group>"; };
@@ -124,8 +130,9 @@
 		4D196DC82BBA835900311CAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4D196DCD2BBA84CB00311CAF /* Product.swift */,
 				4D196DCF2BBA85E100311CAF /* DataManager.swift */,
+				9C8558262BBC607E00375397 /* AppleProduct.swift */,
+				9C85582C2BBC63C700375397 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,8 +140,10 @@
 		4D196DC92BBA836200311CAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
 				4D196DD52BBA9CCE00311CAF /* ProductCell.swift */,
+				9C8558282BBC60CF00375397 /* PriceCell.swift */,
+				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
+				9C8558292BBC60CF00375397 /* PriceCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +337,7 @@
 				9C252D9F2BBA4BF7000AB9DA /* Assets.xcassets in Resources */,
 				9CB8228B2BBA8D0500F549A7 /* iPadAir.png in Resources */,
 				9CB8227B2BBA8D0500F549A7 /* MacBookPro16.jpeg in Resources */,
+				9C85582B2BBC60CF00375397 /* PriceCell.xib in Resources */,
 				9CB822832BBA8D0500F549A7 /* iPhone14Plus.png in Resources */,
 				9CB822882BBA8D0500F549A7 /* iPhoneSE.jpeg in Resources */,
 				9CB8227F2BBA8D0500F549A7 /* ProDisplayXDR.jpeg in Resources */,
@@ -376,11 +386,13 @@
 			files = (
 				9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */,
 				4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */,
+				9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */,
 				9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */,
-				4D196DCE2BBA84CB00311CAF /* Product.swift in Sources */,
 				9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */,
+				9C85582A2BBC60CF00375397 /* PriceCell.swift in Sources */,
 				4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */,
 				9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */,
+				9C85582D2BBC63C700375397 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
