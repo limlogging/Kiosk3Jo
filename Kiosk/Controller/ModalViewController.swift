@@ -214,7 +214,8 @@ class ModalViewController: UIViewController {
         } else {
             let oAlert = UIAlertController(title: "주문하기", message: "담으신 상품을 결제하시겠습니까?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "네", style: .default) { action in
-                self.selectedList = []
+                self.selectedList.removeAll()
+                self.delegate?.sendData(dataList: self.selectedList)
                 self.getData()
                 self.tableView.reloadData()
             }
@@ -235,7 +236,8 @@ class ModalViewController: UIViewController {
         } else {
             let cAlert = UIAlertController(title: "주문 취소", message: "상품을 모두 삭제하시겠습니까?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "네", style: .default) { action in
-                self.selectedList = []
+                self.selectedList.removeAll()
+                self.delegate?.sendData(dataList: self.selectedList)
                 self.getData()
                 self.tableView.reloadData()
             }
@@ -247,12 +249,15 @@ class ModalViewController: UIViewController {
     }
 }
 
+// MARK: - TableView Handler
 extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let currentLocation = indexPath.row
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as? PriceCell else { return UITableViewCell()
@@ -275,6 +280,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // MARK: - - 버튼 이벤트
     @objc func minusValue(sender: UIButton) {
         var currentValue = selectedList[sender.tag].value
         if let cell = tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? PriceCell {
@@ -291,6 +297,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    // MARK: - + 버튼 이벤트
     @objc func plusValue(sender: UIButton) {
         var currentValue = selectedList[sender.tag].value
         
@@ -303,6 +310,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    // MARK: - x 버튼 이벤트
     @objc func deleteValue(sender: UIButton) {
         selectedList.remove(at: sender.tag)
         tableView.reloadData()
