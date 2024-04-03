@@ -96,6 +96,7 @@ class ViewController: UIViewController {
             let cAlert = UIAlertController(title: "주문 취소", message: "상품을 모두 삭제하시겠습니까?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "네", style: .default) { action in
                 self.selectedList = []
+                self.getData()
                 self.tableView.reloadData()
             }
             
@@ -129,6 +130,7 @@ class ViewController: UIViewController {
             let yes = UIAlertAction(title: "네", style: .default) { action in
                 
                 self.selectedList = []
+                self.getData()
                 self.tableView.reloadData()
             }
             
