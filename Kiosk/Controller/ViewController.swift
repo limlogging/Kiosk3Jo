@@ -66,6 +66,81 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
     
+ 
+    @IBAction func questionAlert(_ sender: UIButton) {
+        let qAlert = UIAlertController(title: "문의사항을 남겨주세요.", message: "", preferredStyle: .alert)
+        let save = UIAlertAction(title: "저장", style: .default)
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        qAlert.addAction(cancel)
+        qAlert.addAction(save)
+        qAlert.addTextField() { (UITextField) in
+            UITextField.placeholder = "이곳에 입력해주세요."
+        }
+        self.present(qAlert, animated: true)
+    }
+    
+    @IBAction func cancelAlert(_ sender: UIButton) {
+        
+        if selectedList.isEmpty {
+            
+            let cAlert = UIAlertController(title: "취소불가", message: "취소할 상품이 없습니다.", preferredStyle: .alert)
+            let yes = UIAlertAction(title: "네", style: .default)
+            
+            cAlert.addAction(yes)
+            
+            self.present(cAlert, animated: true)
+            
+        } else {
+            
+            let cAlert = UIAlertController(title: "주문 취소", message: "상품을 모두 삭제하시겠습니까?", preferredStyle: .alert)
+            let yes = UIAlertAction(title: "네", style: .default) { action in
+                self.selectedList = []
+                self.tableView.reloadData()
+            }
+            
+            
+            let no = UIAlertAction(title: "아니오", style: .cancel)
+            
+            cAlert.addAction(yes)
+            cAlert.addAction(no)
+            
+            self.present(cAlert, animated: true)
+            
+        }
+    }
+    
+    @IBAction func orderAlert(_ sender: UIButton) {
+        
+        if selectedList.isEmpty {
+            
+            let oAlert = UIAlertController(title: "주문불가", message: "장바구니에 담긴 상품이 없습니다. 상품을 추가해주세요.", preferredStyle: .alert)
+            
+            let yes = UIAlertAction(title: "네", style: .default)
+            
+            oAlert.addAction(yes)
+            
+            self.present(oAlert, animated: true)
+            
+        } else {
+            
+            let oAlert = UIAlertController(title: "주문하기", message: "담으신 상품을 결제하시겠습니까?", preferredStyle: .alert)
+            
+            let yes = UIAlertAction(title: "네", style: .default) { action in
+                
+                self.selectedList = []
+                self.tableView.reloadData()
+            }
+            
+            let no = UIAlertAction(title: "아니오", style: .cancel)
+            
+            oAlert.addAction(yes)
+            oAlert.addAction(no)
+            
+            self.present(oAlert, animated: true)
+        }
+    }
+    
     func getData() {
         totalCount = selectedList.map{$0.value}.reduce(0, +)
         totalPrice = selectedList.map{Int($0.value * $0.price)}.reduce(0, +)

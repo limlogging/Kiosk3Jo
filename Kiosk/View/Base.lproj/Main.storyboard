@@ -67,16 +67,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="109" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="문의하기"/>
+                                        <connections>
+                                            <action selector="questionAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="feg-We-41Q"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6to-vT-6b9">
                                         <rect key="frame" x="132" y="0.0" width="109" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="취소하기"/>
+                                        <connections>
+                                            <action selector="cancelAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWZ-l4-dnE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-Ix-ch1">
                                         <rect key="frame" x="264" y="0.0" width="109" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="주문하기"/>
+                                        <connections>
+                                            <action selector="orderAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NGh-yr-ZZQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
