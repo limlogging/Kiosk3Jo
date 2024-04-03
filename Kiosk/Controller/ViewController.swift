@@ -5,17 +5,14 @@
 //  Created by imhs on 4/1/24.
 //
 
+
+
 import UIKit
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var productSegment: UISegmentedControl!
-    
-    //@IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var countLabel: UILabel!
-    
     
     let dataManager = DataManager()
     let cellMarginSize: CGFloat = 2.0
@@ -29,6 +26,7 @@ class ViewController: UIViewController {
     
     var modalViewController = ModalViewController()
     var dimmingView: UIView?
+    
     
     var selectedList: [AppleProduct] = [AppleProduct]()
     var totalCount = 0
@@ -47,8 +45,12 @@ class ViewController: UIViewController {
         numberFormatter.numberStyle = .decimal
         
         addDimmingView()
+        
     }
     
+    @IBAction func test(_ sender: UIButton) {
+        print(selectedList)
+    }
     func setupCollectionView() {
         let flowLayout = createFlowLayout()
         mainCollectionView.collectionViewLayout = flowLayout
@@ -110,8 +112,11 @@ class ViewController: UIViewController {
     @IBAction func openCart(_ sender: UIButton) {
         
         let modalVC = self.modalViewController
-        
+        modalVC.delegate = self
+
+        modalVC.selectedList.removeAll()
         modalVC.selectedList = selectedList
+       
         // 사이드 메뉴 뷰 컨트롤러를 자식으로 추가하고 뷰 계층 구조에 추가.
         self.addChild(modalVC)
         self.view.addSubview(modalVC.view)
@@ -159,7 +164,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             
             self.present(alert, animated: true)
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -172,5 +176,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let product = filteredProducts[indexPath.item]
         cell.configure(with: product)
         return cell
+    }
+}
+
+extension ViewController: sendList {
+    func sendData(dataList: [AppleProduct]) {
+        selectedList = dataList
     }
 }

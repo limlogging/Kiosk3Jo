@@ -5,6 +5,10 @@
 //  Created by Dongik Song on 4/3/24.
 //
 
+protocol sendList: AnyObject {
+    func sendData (dataList: [AppleProduct])
+}
+
 import UIKit
 
 class ModalViewController: UIViewController {
@@ -38,6 +42,7 @@ class ModalViewController: UIViewController {
     
     let numberFormatter = NumberFormatter()
     
+    weak var delegate: sendList?
     var totalCount = 0
     var totalPrice = 0
     
@@ -51,17 +56,25 @@ class ModalViewController: UIViewController {
         numberFormatter.numberStyle = .decimal
         
         applyConstraints()
-        
+
         priceLabel.text = "0 원"
         countLabel.text = "0 개"
         
         tableView.rowHeight = 75
+        
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
         
+        tableView.reloadData()
+        getData()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        getData()
+    }
+    
     
     func applyConstraints () {
 
@@ -95,8 +108,8 @@ class ModalViewController: UIViewController {
     func getData() {
         totalCount = selectedList.map{$0.value}.reduce(0, +)
         totalPrice = selectedList.map{$0.value * $0.price}.reduce(0, +)
-        //priceLabel.text = "\(numberFormatter.string(from: totalPrice as NSNumber) ?? "0") 원"
-        //countLabel.text = "\(String(totalCount)) 개"
+        priceLabel.text = "\(numberFormatter.string(from: totalPrice as NSNumber) ?? "0") 원"
+        countLabel.text = "\(String(totalCount)) 개"
     }
     
 }
@@ -136,6 +149,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
                 currentValue -= 1
                 selectedList[sender.tag].value = currentValue
                 cell.valueLabel.text = String(currentValue)
+                self.delegate?.sendData(dataList: selectedList)
                 getData()
             } else {
                 currentValue = 1
@@ -151,7 +165,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
             currentValue += 1
             selectedList[sender.tag].value = currentValue
             cell.valueLabel.text = String(currentValue)
-            
+            self.delegate?.sendData(dataList: selectedList)
             getData()
         }
     }
@@ -159,6 +173,7 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func deleteValue(sender: UIButton) {
         selectedList.remove(at: sender.tag)
         tableView.reloadData()
+        self.delegate?.sendData(dataList: selectedList)
         getData()
     }
 }
