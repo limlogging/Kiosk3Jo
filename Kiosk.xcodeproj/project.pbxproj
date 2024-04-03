@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DCF2BBA85E100311CAF /* DataManager.swift */; };
 		4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DD52BBA9CCE00311CAF /* ProductCell.swift */; };
-		6B3450FA2BBCF4C200B8CFCA /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3450F92BBCF4C200B8CFCA /* PriceCell.xib */; };
-		6B3450FC2BBCF4CC00B8CFCA /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3450FB2BBCF4CC00B8CFCA /* PriceCell.swift */; };
+		61F971D82BBCC9F000A472C0 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F971D62BBCC9EF00A472C0 /* PriceCell.swift */; };
+		61F971D92BBCC9F000A472C0 /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F971D72BBCC9F000A472C0 /* PriceCell.xib */; };
+		61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */; };
 		9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */; };
 		9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */; };
 		9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D962BBA4BF6000AB9DA /* ViewController.swift */; };
@@ -63,8 +64,9 @@
 /* Begin PBXFileReference section */
 		4D196DCF2BBA85E100311CAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4D196DD52BBA9CCE00311CAF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		6B3450F92BBCF4C200B8CFCA /* PriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
-		6B3450FB2BBCF4CC00B8CFCA /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
+		61F971D62BBCC9EF00A472C0 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
+		61F971D72BBCC9F000A472C0 /* PriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
+		61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		9C252D8F2BBA4BF6000AB9DA /* Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,10 +142,10 @@
 		4D196DC92BBA836200311CAF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				61F971D62BBCC9EF00A472C0 /* PriceCell.swift */,
+				61F971D72BBCC9F000A472C0 /* PriceCell.xib */,
 				4D196DD52BBA9CCE00311CAF /* ProductCell.swift */,
 				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
-				6B3450FB2BBCF4CC00B8CFCA /* PriceCell.swift */,
-				6B3450F92BBCF4C200B8CFCA /* PriceCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				9C252D962BBA4BF6000AB9DA /* ViewController.swift */,
+				61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,7 +340,6 @@
 				9C252D9F2BBA4BF7000AB9DA /* Assets.xcassets in Resources */,
 				9CB8228B2BBA8D0500F549A7 /* iPadAir.png in Resources */,
 				9CB8227B2BBA8D0500F549A7 /* MacBookPro16.jpeg in Resources */,
-				6B3450FA2BBCF4C200B8CFCA /* PriceCell.xib in Resources */,
 				9CB822832BBA8D0500F549A7 /* iPhone14Plus.png in Resources */,
 				9CB822882BBA8D0500F549A7 /* iPhoneSE.jpeg in Resources */,
 				9CB8227F2BBA8D0500F549A7 /* ProDisplayXDR.jpeg in Resources */,
@@ -351,6 +353,7 @@
 				9CB822762BBA8D0500F549A7 /* iMac.png in Resources */,
 				9CB822842BBA8D0500F549A7 /* iPhone15.jpeg in Resources */,
 				9CB822972BBA8D0500F549A7 /* MagSafeiPhone15실리콘케이스.png in Resources */,
+				61F971D92BBCC9F000A472C0 /* PriceCell.xib in Resources */,
 				9CB822792BBA8D0500F549A7 /* MacBookAir15(M3).png in Resources */,
 				9CB8228C2BBA8D0500F549A7 /* iPadMini.png in Resources */,
 				9CB8228D2BBA8D0500F549A7 /* iPadPro11.png in Resources */,
@@ -388,8 +391,10 @@
 				6B3450FC2BBCF4CC00B8CFCA /* PriceCell.swift in Sources */,
 				4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */,
 				9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */,
+				61F971D82BBCC9F000A472C0 /* PriceCell.swift in Sources */,
 				9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */,
 				9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */,
+				61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */,
 				4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */,
 				9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */,
 				9C85582D2BBC63C700375397 /* Constants.swift in Sources */,
