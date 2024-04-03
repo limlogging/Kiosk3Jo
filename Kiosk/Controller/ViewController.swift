@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var productSegment: UISegmentedControl!
     
+    @IBOutlet weak var notiLabel: UILabel!
+    
     let dataManager = DataManager()
     let cellMarginSize: CGFloat = 2.0
     let numberFormatter = NumberFormatter()
@@ -29,10 +31,7 @@ class ViewController: UIViewController {
     
     
     var selectedList: [AppleProduct] = [AppleProduct]()
-    var totalCount = 0
-    var totalPrice = 0
-    
-    
+     
     // MARK: - viewDidLoad 설정
     
     override func viewDidLoad() {
@@ -44,17 +43,26 @@ class ViewController: UIViewController {
         
         numberFormatter.numberStyle = .decimal
         
-        addDimmingView()
         
+        addDimmingView()
+        setLabel()
     }
- 
+
+    func setLabel () {
+        notiLabel.backgroundColor = .red
+        notiLabel.textColor = .white
+        notiLabel.layer.masksToBounds = true
+        notiLabel.layer.cornerRadius = notiLabel.frame.width/2
+        
+        if selectedList.count == 0 {
+            notiLabel.isHidden = true
+        } else {
+            notiLabel.text = String(selectedList.map{$0.value}.reduce(0, +))
+            notiLabel.isHidden = false
+        }
+    }
     
-    func getData() {
-        totalCount = selectedList.map{$0.value}.reduce(0, +)
-        totalPrice = selectedList.map{Int($0.value * $0.price)}.reduce(0, +)
-        //priceLabel.text = "\(String(totalPrice)) 원"
-        //countLabel.text = "\(String(totalCount)) 개"
-    }
+    
     func setupCollectionView() {
         let flowLayout = createFlowLayout()
         mainCollectionView.collectionViewLayout = flowLayout
@@ -84,6 +92,7 @@ class ViewController: UIViewController {
         mainCollectionView.reloadData()
     }
     
+    // MARK: - ModalVC 구현
     private func addDimmingView() {
         // 어둑해지는 화면을 구현
         dimmingView = UIView(frame: self.view.bounds)
@@ -107,7 +116,9 @@ class ViewController: UIViewController {
             modalVC.view.removeFromSuperview()
             modalVC.removeFromParent()
             self.dimmingView?.isHidden = true
+            self.setLabel()
         }
+        
     }
     
     // MARK: - 장바구니 선택
@@ -161,9 +172,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             let alert = UIAlertController(title: "중복 선택 확인", message: "중복으로 선택 되었습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
             selectedList.removeLast()
-            
+           
             self.present(alert, animated: true)
         }
+        setLabel()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -179,6 +191,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
+// MARK: - Delegate를 통한 데이터 전달 (From ModalVC)
 extension ViewController: sendList {
     func sendData(dataList: [AppleProduct]) {
         selectedList = dataList
