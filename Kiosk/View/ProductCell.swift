@@ -9,7 +9,16 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
 // MARK: - code cell 구현
+    // 이미지, 레이블 등을 포함할 컨테이너 뷰
+    let containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.backgroundColor = .white
+        return view
+    }()
     
+    // 이미지 뷰
     let productImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -18,18 +27,18 @@ class ProductCell: UICollectionViewCell {
         return imageView
     }()
     
+    // 제품 이름 레이블
     let productLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    // 제품 가격 레이블
     let productPrice: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,11 +47,25 @@ class ProductCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(productImage)
-        addSubview(productLabel)
-        addSubview(productPrice)
+        addSubview(containerView)
+        containerView.addSubview(productImage)
+        containerView.addSubview(productLabel)
+        containerView.addSubview(productPrice)
+        
+        containerView.layer.masksToBounds = false
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 0.1
+        containerView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        containerView.layer.shadowRadius = 5
+        containerView.layer.cornerRadius = 10
+        productImage.layer.cornerRadius = 10
         
         NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
             productImage.topAnchor.constraint(equalTo: topAnchor),
             productImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: trailingAnchor),
