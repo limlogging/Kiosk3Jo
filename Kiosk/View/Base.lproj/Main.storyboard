@@ -52,17 +52,7 @@
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="J20-TC-EcA">
                                 <rect key="frame" x="10" y="539" width="373" height="194"/>
-                                <color key="backgroundColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="priceCell" id="NsK-iK-XDK">
-                                        <rect key="frame" x="0.0" y="50" width="373" height="44.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NsK-iK-XDK" id="6er-qs-5Em">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="44.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjw-1J-kTU">
                                 <rect key="frame" x="353.33333333333331" y="513.66666666666663" width="29.666666666666686" height="20.333333333333371"/>
@@ -128,8 +118,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countLabel" destination="911-9T-7xT" id="Uh8-TG-0FT"/>
                         <outlet property="mainCollectionView" destination="Jk3-Kf-dJk" id="jhE-ko-zDQ"/>
+                        <outlet property="priceLabel" destination="gjw-1J-kTU" id="lsr-mt-fXv"/>
                         <outlet property="productSegment" destination="AKg-s5-1GB" id="P0p-4b-WMN"/>
+                        <outlet property="tableView" destination="J20-TC-EcA" id="eBa-ZV-hn3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
