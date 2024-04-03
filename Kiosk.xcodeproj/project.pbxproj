@@ -388,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */,
+				6B3450FC2BBCF4CC00B8CFCA /* PriceCell.swift in Sources */,
 				4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */,
 				9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */,
 				61F971D82BBCC9F000A472C0 /* PriceCell.swift in Sources */,
