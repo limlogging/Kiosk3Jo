@@ -5,9 +5,6 @@
 //  Created by Dongik Song on 4/3/24.
 //
 
-protocol sendList: AnyObject {
-    func sendData (dataList: [AppleProduct])
-}
 
 import UIKit
 
@@ -89,11 +86,10 @@ class ModalViewController: UIViewController {
     
     let numberFormatter = NumberFormatter()
     
-    weak var delegate: sendList?
+
     var totalCount = 0
     var totalPrice = 0
     
-    var selectedList: [AppleProduct] = [AppleProduct]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,8 +118,8 @@ class ModalViewController: UIViewController {
     }
     
     func getData() {
-        totalCount = selectedList.map{$0.value}.reduce(0, +)
-        totalPrice = selectedList.map{$0.value * $0.price}.reduce(0, +)
+        totalCount = ListManager.shared.list.map{$0.value}.reduce(0, +)
+        totalPrice = ListManager.shared.list.map{$0.value * $0.price}.reduce(0, +)
         priceLabel.text = "\(numberFormatter.string(from: totalPrice as NSNumber) ?? "0") 원"
         countLabel.text = "\(String(totalCount)) 개"
     }
@@ -206,7 +202,7 @@ class ModalViewController: UIViewController {
     
     // MARK: - 주문하기 버튼 이벤트
     @objc func orderAlert(_ sender: UIButton) {
-        if selectedList.isEmpty {
+        if ListManager.shared.list.isEmpty {
             let oAlert = UIAlertController(title: "주문불가", message: "장바구니에 담긴 상품이 없습니다. 상품을 추가해주세요.", preferredStyle: .alert)
             let yes = UIAlertAction(title: "네", style: .default)
             oAlert.addAction(yes)
@@ -214,8 +210,8 @@ class ModalViewController: UIViewController {
         } else {
             let oAlert = UIAlertController(title: "주문하기", message: "담으신 상품을 결제하시겠습니까?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "네", style: .default) { action in
-                self.selectedList.removeAll()
-                self.delegate?.sendData(dataList: self.selectedList)
+                ListManager.shared.list.removeAll()
+                
                 self.getData()
                 self.tableView.reloadData()
             }
@@ -228,7 +224,7 @@ class ModalViewController: UIViewController {
     
     // MARK: - 취소하기 버튼 이벤트
     @objc func cancelAlert(_ sender: UIButton) {
-        if selectedList.isEmpty {
+        if ListManager.shared.list.isEmpty {
             let cAlert = UIAlertController(title: "취소불가", message: "취소할 상품이 없습니다.", preferredStyle: .alert)
             let yes = UIAlertAction(title: "네", style: .default)
             cAlert.addAction(yes)
@@ -236,8 +232,8 @@ class ModalViewController: UIViewController {
         } else {
             let cAlert = UIAlertController(title: "주문 취소", message: "상품을 모두 삭제하시겠습니까?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "네", style: .default) { action in
-                self.selectedList.removeAll()
-                self.delegate?.sendData(dataList: self.selectedList)
+                ListManager.shared.list.removeAll()
+                
                 self.getData()
                 self.tableView.reloadData()
             }
@@ -253,7 +249,7 @@ class ModalViewController: UIViewController {
 extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedList.count
+        return ListManager.shared.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -264,10 +260,10 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.selectionStyle = .none
-        cell.titleLabel.text = selectedList[currentLocation].name
-        cell.itemImage.image = selectedList[currentLocation].image
-        cell.priceLabel.text = numberFormatter.string(from: selectedList[currentLocation].price as NSNumber)
-        cell.valueLabel.text = String(selectedList[currentLocation].value)
+        cell.titleLabel.text = ListManager.shared.list[currentLocation].name
+        cell.itemImage.image = ListManager.shared.list[currentLocation].image
+        cell.priceLabel.text = numberFormatter.string(from: ListManager.shared.list[currentLocation].price as NSNumber)
+        cell.valueLabel.text = String(ListManager.shared.list[currentLocation].value)
         
         cell.minusBtn.tag = currentLocation
         cell.plusBtn.tag = currentLocation
@@ -282,13 +278,13 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - - 버튼 이벤트
     @objc func minusValue(sender: UIButton) {
-        var currentValue = selectedList[sender.tag].value
+        var currentValue = ListManager.shared.list[sender.tag].value
         if let cell = tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? PriceCell {
             if currentValue != 1 {
                 currentValue -= 1
-                selectedList[sender.tag].value = currentValue
+                ListManager.shared.list[sender.tag].value = currentValue
                 cell.valueLabel.text = String(currentValue)
-                self.delegate?.sendData(dataList: selectedList)
+               
                 getData()
             } else {
                 currentValue = 1
@@ -299,22 +295,22 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - + 버튼 이벤트
     @objc func plusValue(sender: UIButton) {
-        var currentValue = selectedList[sender.tag].value
+        var currentValue = ListManager.shared.list[sender.tag].value
         
         if let cell = tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as? PriceCell {
             currentValue += 1
-            selectedList[sender.tag].value = currentValue
+            ListManager.shared.list[sender.tag].value = currentValue
             cell.valueLabel.text = String(currentValue)
-            self.delegate?.sendData(dataList: selectedList)
+            
             getData()
         }
     }
     
     // MARK: - x 버튼 이벤트
     @objc func deleteValue(sender: UIButton) {
-        selectedList.remove(at: sender.tag)
+        ListManager.shared.list.remove(at: sender.tag)
         tableView.reloadData()
-        self.delegate?.sendData(dataList: selectedList)
+       
         getData()
     }
 }
