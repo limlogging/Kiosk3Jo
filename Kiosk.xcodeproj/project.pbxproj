@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DCF2BBA85E100311CAF /* DataManager.swift */; };
 		4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DD52BBA9CCE00311CAF /* ProductCell.swift */; };
+		4D89ACE32BBED2420073452E /* CallCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89ACE22BBED2420073452E /* CallCenterTableViewCell.swift */; };
 		61F971D82BBCC9F000A472C0 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F971D62BBCC9EF00A472C0 /* PriceCell.swift */; };
-		61F971D92BBCC9F000A472C0 /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F971D72BBCC9F000A472C0 /* PriceCell.xib */; };
 		61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */; };
 		9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */; };
 		9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */; };
@@ -69,6 +69,7 @@
 /* Begin PBXFileReference section */
 		4D196DCF2BBA85E100311CAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4D196DD52BBA9CCE00311CAF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		4D89ACE22BBED2420073452E /* CallCenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenterTableViewCell.swift; sourceTree = "<group>"; };
 		61F971D62BBCC9EF00A472C0 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
 		61F971D72BBCC9F000A472C0 /* PriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
 		61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +159,7 @@
 				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
 				9C99BB002BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift */,
 				9C99BB012BBEA50A00D3BC06 /* HomeCollectionViewCell.swift */,
+				4D89ACE22BBED2420073452E /* CallCenterTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +411,7 @@
 				9C99BB032BBEA50A00D3BC06 /* HomeCollectionViewCell.swift in Sources */,
 				9C99BAFF2BBE38E500D3BC06 /* CallCenterViewController.swift in Sources */,
 				9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */,
+				4D89ACE32BBED2420073452E /* CallCenterTableViewCell.swift in Sources */,
 				9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */,
 				61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */,
 				9C99BB052BBEA51D00D3BC06 /* HomeViewController.swift in Sources */,

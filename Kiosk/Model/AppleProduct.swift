@@ -25,3 +25,12 @@ struct HomeItem {
         self.image = UIImage(named: imageName)!
     }
 }
+
+
+// MARK: - 고객센터 데이터
+struct Menu {
+    let title: String
+    let leftImage: String?
+    let rightImage: String?
+}
+

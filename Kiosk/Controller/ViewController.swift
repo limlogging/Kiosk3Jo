@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     var modalViewController = ModalViewController()
     var dimmingView: UIView?
     var selectedList: [AppleProduct] = [AppleProduct]()
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
         notiLabel.layer.masksToBounds = true
         notiLabel.layer.cornerRadius = notiLabel.frame.width/2
         
-        searchBar.placeholder = "검색어를 입력하세요."
+        searchBar.placeholder = "상품을 검색하세요."
         searchBar.autocorrectionType = .no
         searchBar.spellCheckingType = .no
         

@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igp-Vz-dzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="-49"/>
+            <point key="canvasLocation" x="505" y="-49"/>
         </scene>
         <!--상품-->
         <scene sceneID="tne-QT-ifu">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1067.9389312977098" y="-49.295774647887328"/>
+            <point key="canvasLocation" x="1314" y="-49"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HF3-C7-FYi">
@@ -147,12 +147,12 @@
                         <segue destination="0TG-LC-Fm1" kind="relationship" relationship="viewControllers" id="0DG-NU-Kzp"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="yv4-ov-UHF"/>
                         <segue destination="WgG-Kc-Fv8" kind="relationship" relationship="viewControllers" destinationCreationSelector="myPageSegue" id="MGZ-lt-HxM"/>
-                        <segue destination="mJy-5V-lEK" kind="relationship" relationship="viewControllers" id="NKs-f3-LPO"/>
+                        <segue destination="Y6B-6X-0mu" kind="relationship" relationship="viewControllers" id="dCF-hW-YGp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwe-7U-9t5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-283.20610687022901" y="-49.295774647887328"/>
+            <point key="canvasLocation" x="-283" y="-49"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="fFs-Vo-rs1">
@@ -181,10 +181,28 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="고객센터" image="phone.bubble" catalog="system" id="alH-Jj-FWm"/>
+                    <navigationItem key="navigationItem" id="i1C-YY-dHI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="231-uf-hQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="773"/>
+            <point key="canvasLocation" x="1315" y="773"/>
+        </scene>
+        <!--고객센터-->
+        <scene sceneID="Xon-Fq-GfE">
+            <objects>
+                <navigationController id="Y6B-6X-0mu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="고객센터" image="phone.bubble" catalog="system" id="wEU-SJ-aBq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8JX-P2-fh2">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mJy-5V-lEK" kind="relationship" relationship="rootViewController" id="CSX-r2-s82"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w1H-Nv-fHl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="773"/>
         </scene>
     </scenes>
     <resources>
