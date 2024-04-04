@@ -45,21 +45,21 @@
 		9CB822862BBA8D0500F549A7 /* iPhone15Pro.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8225C2BBA8D0500F549A7 /* iPhone15Pro.jpeg */; };
 		9CB822872BBA8D0500F549A7 /* iPhone15ProMax.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8225D2BBA8D0500F549A7 /* iPhone15ProMax.png */; };
 		9CB822882BBA8D0500F549A7 /* iPhoneSE.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8225E2BBA8D0500F549A7 /* iPhoneSE.jpeg */; };
-		9CB822892BBA8D0500F549A7 /* iPad(9세대).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822602BBA8D0500F549A7 /* iPad(9세대).png */; };
-		9CB8228A2BBA8D0500F549A7 /* iPad(10세대).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822612BBA8D0500F549A7 /* iPad(10세대).png */; };
+		9CB822892BBA8D0500F549A7 /* iPad(9th generation).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822602BBA8D0500F549A7 /* iPad(9th generation).png */; };
+		9CB8228A2BBA8D0500F549A7 /* iPad(10th generation).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822612BBA8D0500F549A7 /* iPad(10th generation).png */; };
 		9CB8228B2BBA8D0500F549A7 /* iPadAir.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822622BBA8D0500F549A7 /* iPadAir.png */; };
 		9CB8228C2BBA8D0500F549A7 /* iPadMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822632BBA8D0500F549A7 /* iPadMini.png */; };
 		9CB8228D2BBA8D0500F549A7 /* iPadPro11.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822642BBA8D0500F549A7 /* iPadPro11.png */; };
 		9CB8228E2BBA8D0500F549A7 /* iPadPro12.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822652BBA8D0500F549A7 /* iPadPro12.9.png */; };
-		9CB8228F2BBA8D0500F549A7 /* 20WUSB-C전원어댑터.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822672BBA8D0500F549A7 /* 20WUSB-C전원어댑터.jpeg */; };
-		9CB822902BBA8D0500F549A7 /* 밀레니즈 루프.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822682BBA8D0500F549A7 /* 밀레니즈 루프.png */; };
+		9CB8228F2BBA8D0500F549A7 /* 20WUSB-CpowerAdaptor.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822672BBA8D0500F549A7 /* 20WUSB-CpowerAdaptor.jpeg */; };
+		9CB822902BBA8D0500F549A7 /* MilaneseLoop.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822682BBA8D0500F549A7 /* MilaneseLoop.png */; };
 		9CB822912BBA8D0500F549A7 /* AirTag.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822692BBA8D0500F549A7 /* AirTag.jpeg */; };
 		9CB822922BBA8D0500F549A7 /* Keyboard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226A2BBA8D0500F549A7 /* Keyboard.jpeg */; };
-		9CB822932BBA8D0500F549A7 /* MacSafeiPhone15Pro투명케이스.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226B2BBA8D0500F549A7 /* MacSafeiPhone15Pro투명케이스.jpeg */; };
-		9CB822942BBA8D0500F549A7 /* MacSafeiPhone파인우븐카드지갑.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226C2BBA8D0500F549A7 /* MacSafeiPhone파인우븐카드지갑.png */; };
+		9CB822932BBA8D0500F549A7 /* MacSafeiPhone15ProClearCase.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226B2BBA8D0500F549A7 /* MacSafeiPhone15ProClearCase.jpeg */; };
+		9CB822942BBA8D0500F549A7 /* MacSafeiPhoneFineWovenWallet.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226C2BBA8D0500F549A7 /* MacSafeiPhoneFineWovenWallet.png */; };
 		9CB822952BBA8D0500F549A7 /* MagicMouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226D2BBA8D0500F549A7 /* MagicMouse.png */; };
 		9CB822962BBA8D0500F549A7 /* MagicTrackpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226E2BBA8D0500F549A7 /* MagicTrackpad.png */; };
-		9CB822972BBA8D0500F549A7 /* MagSafeiPhone15실리콘케이스.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226F2BBA8D0500F549A7 /* MagSafeiPhone15실리콘케이스.png */; };
+		9CB822972BBA8D0500F549A7 /* MagSafeiPhone15SiliconeCase.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8226F2BBA8D0500F549A7 /* MagSafeiPhone15SiliconeCase.png */; };
 		9CB822982BBA8D0500F549A7 /* AppleWatchHermes.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822712BBA8D0500F549A7 /* AppleWatchHermes.jpeg */; };
 		9CB822992BBA8D0500F549A7 /* AppleWatchSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822722BBA8D0500F549A7 /* AppleWatchSE.png */; };
 		9CB8229A2BBA8D0500F549A7 /* AppleWatchSeries9.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB822732BBA8D0500F549A7 /* AppleWatchSeries9.png */; };
@@ -107,21 +107,21 @@
 		9CB8225C2BBA8D0500F549A7 /* iPhone15Pro.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iPhone15Pro.jpeg; sourceTree = "<group>"; };
 		9CB8225D2BBA8D0500F549A7 /* iPhone15ProMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone15ProMax.png; sourceTree = "<group>"; };
 		9CB8225E2BBA8D0500F549A7 /* iPhoneSE.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iPhoneSE.jpeg; sourceTree = "<group>"; };
-		9CB822602BBA8D0500F549A7 /* iPad(9세대).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad(9세대).png"; sourceTree = "<group>"; };
-		9CB822612BBA8D0500F549A7 /* iPad(10세대).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad(10세대).png"; sourceTree = "<group>"; };
+		9CB822602BBA8D0500F549A7 /* iPad(9th generation).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad(9th generation).png"; sourceTree = "<group>"; };
+		9CB822612BBA8D0500F549A7 /* iPad(10th generation).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPad(10th generation).png"; sourceTree = "<group>"; };
 		9CB822622BBA8D0500F549A7 /* iPadAir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadAir.png; sourceTree = "<group>"; };
 		9CB822632BBA8D0500F549A7 /* iPadMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadMini.png; sourceTree = "<group>"; };
 		9CB822642BBA8D0500F549A7 /* iPadPro11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadPro11.png; sourceTree = "<group>"; };
 		9CB822652BBA8D0500F549A7 /* iPadPro12.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadPro12.9.png; sourceTree = "<group>"; };
-		9CB822672BBA8D0500F549A7 /* 20WUSB-C전원어댑터.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20WUSB-C전원어댑터.jpeg"; sourceTree = "<group>"; };
-		9CB822682BBA8D0500F549A7 /* 밀레니즈 루프.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "밀레니즈 루프.png"; sourceTree = "<group>"; };
+		9CB822672BBA8D0500F549A7 /* 20WUSB-CpowerAdaptor.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20WUSB-CpowerAdaptor.jpeg"; sourceTree = "<group>"; };
+		9CB822682BBA8D0500F549A7 /* MilaneseLoop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MilaneseLoop.png; sourceTree = "<group>"; };
 		9CB822692BBA8D0500F549A7 /* AirTag.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AirTag.jpeg; sourceTree = "<group>"; };
 		9CB8226A2BBA8D0500F549A7 /* Keyboard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Keyboard.jpeg; sourceTree = "<group>"; };
-		9CB8226B2BBA8D0500F549A7 /* MacSafeiPhone15Pro투명케이스.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "MacSafeiPhone15Pro투명케이스.jpeg"; sourceTree = "<group>"; };
-		9CB8226C2BBA8D0500F549A7 /* MacSafeiPhone파인우븐카드지갑.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MacSafeiPhone파인우븐카드지갑.png"; sourceTree = "<group>"; };
+		9CB8226B2BBA8D0500F549A7 /* MacSafeiPhone15ProClearCase.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MacSafeiPhone15ProClearCase.jpeg; sourceTree = "<group>"; };
+		9CB8226C2BBA8D0500F549A7 /* MacSafeiPhoneFineWovenWallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MacSafeiPhoneFineWovenWallet.png; sourceTree = "<group>"; };
 		9CB8226D2BBA8D0500F549A7 /* MagicMouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagicMouse.png; sourceTree = "<group>"; };
 		9CB8226E2BBA8D0500F549A7 /* MagicTrackpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagicTrackpad.png; sourceTree = "<group>"; };
-		9CB8226F2BBA8D0500F549A7 /* MagSafeiPhone15실리콘케이스.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MagSafeiPhone15실리콘케이스.png"; sourceTree = "<group>"; };
+		9CB8226F2BBA8D0500F549A7 /* MagSafeiPhone15SiliconeCase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagSafeiPhone15SiliconeCase.png; sourceTree = "<group>"; };
 		9CB822712BBA8D0500F549A7 /* AppleWatchHermes.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AppleWatchHermes.jpeg; sourceTree = "<group>"; };
 		9CB822722BBA8D0500F549A7 /* AppleWatchSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleWatchSE.png; sourceTree = "<group>"; };
 		9CB822732BBA8D0500F549A7 /* AppleWatchSeries9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleWatchSeries9.png; sourceTree = "<group>"; };
@@ -255,8 +255,8 @@
 		9CB822662BBA8D0500F549A7 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				9CB822602BBA8D0500F549A7 /* iPad(9세대).png */,
-				9CB822612BBA8D0500F549A7 /* iPad(10세대).png */,
+				9CB822602BBA8D0500F549A7 /* iPad(9th generation).png */,
+				9CB822612BBA8D0500F549A7 /* iPad(10th generation).png */,
 				9CB822622BBA8D0500F549A7 /* iPadAir.png */,
 				9CB822632BBA8D0500F549A7 /* iPadMini.png */,
 				9CB822642BBA8D0500F549A7 /* iPadPro11.png */,
@@ -268,15 +268,15 @@
 		9CB822702BBA8D0500F549A7 /* etc */ = {
 			isa = PBXGroup;
 			children = (
-				9CB822672BBA8D0500F549A7 /* 20WUSB-C전원어댑터.jpeg */,
-				9CB822682BBA8D0500F549A7 /* 밀레니즈 루프.png */,
+				9CB822672BBA8D0500F549A7 /* 20WUSB-CpowerAdaptor.jpeg */,
+				9CB822682BBA8D0500F549A7 /* MilaneseLoop.png */,
 				9CB822692BBA8D0500F549A7 /* AirTag.jpeg */,
 				9CB8226A2BBA8D0500F549A7 /* Keyboard.jpeg */,
-				9CB8226B2BBA8D0500F549A7 /* MacSafeiPhone15Pro투명케이스.jpeg */,
-				9CB8226C2BBA8D0500F549A7 /* MacSafeiPhone파인우븐카드지갑.png */,
+				9CB8226B2BBA8D0500F549A7 /* MacSafeiPhone15ProClearCase.jpeg */,
+				9CB8226C2BBA8D0500F549A7 /* MacSafeiPhoneFineWovenWallet.png */,
 				9CB8226D2BBA8D0500F549A7 /* MagicMouse.png */,
 				9CB8226E2BBA8D0500F549A7 /* MagicTrackpad.png */,
-				9CB8226F2BBA8D0500F549A7 /* MagSafeiPhone15실리콘케이스.png */,
+				9CB8226F2BBA8D0500F549A7 /* MagSafeiPhone15SiliconeCase.png */,
 			);
 			path = etc;
 			sourceTree = "<group>";
@@ -361,14 +361,13 @@
 				9CB8228E2BBA8D0500F549A7 /* iPadPro12.9.png in Resources */,
 				9CB822802BBA8D0500F549A7 /* StudioDisplay.png in Resources */,
 				9CB822782BBA8D0500F549A7 /* MacBookAir13(M3).png in Resources */,
-				9CB8228F2BBA8D0500F549A7 /* 20WUSB-C전원어댑터.jpeg in Resources */,
+				9CB8228F2BBA8D0500F549A7 /* 20WUSB-CpowerAdaptor.jpeg in Resources */,
 				9CB822962BBA8D0500F549A7 /* MagicTrackpad.png in Resources */,
 				9CB8229A2BBA8D0500F549A7 /* AppleWatchSeries9.png in Resources */,
-				9CB822902BBA8D0500F549A7 /* 밀레니즈 루프.png in Resources */,
+				9CB822902BBA8D0500F549A7 /* MilaneseLoop.png in Resources */,
 				9CB822762BBA8D0500F549A7 /* iMac.png in Resources */,
 				9CB822842BBA8D0500F549A7 /* iPhone15.jpeg in Resources */,
-				9CB822972BBA8D0500F549A7 /* MagSafeiPhone15실리콘케이스.png in Resources */,
-				61F971D92BBCC9F000A472C0 /* PriceCell.xib in Resources */,
+				9CB822972BBA8D0500F549A7 /* MagSafeiPhone15SiliconeCase.png in Resources */,
 				9CB822792BBA8D0500F549A7 /* MacBookAir15(M3).png in Resources */,
 				9CB8228C2BBA8D0500F549A7 /* iPadMini.png in Resources */,
 				9CB8228D2BBA8D0500F549A7 /* iPadPro11.png in Resources */,
@@ -377,7 +376,7 @@
 				9CB822922BBA8D0500F549A7 /* Keyboard.jpeg in Resources */,
 				9CB822822BBA8D0500F549A7 /* iPhone14.jpeg in Resources */,
 				9CB8227A2BBA8D0500F549A7 /* MacBookPro14.png in Resources */,
-				9CB822932BBA8D0500F549A7 /* MacSafeiPhone15Pro투명케이스.jpeg in Resources */,
+				9CB822932BBA8D0500F549A7 /* MacSafeiPhone15ProClearCase.jpeg in Resources */,
 				9CB822852BBA8D0500F549A7 /* iPhone15Plus.png in Resources */,
 				9CB822872BBA8D0500F549A7 /* iPhone15ProMax.png in Resources */,
 				9C252DA22BBA4BF7000AB9DA /* Base in Resources */,
@@ -385,13 +384,13 @@
 				9CB822912BBA8D0500F549A7 /* AirTag.jpeg in Resources */,
 				9CB8229B2BBA8D0500F549A7 /* AppleWatchUltra2.jpeg in Resources */,
 				9CB822812BBA8D0500F549A7 /* iPhone13.png in Resources */,
-				9CB822942BBA8D0500F549A7 /* MacSafeiPhone파인우븐카드지갑.png in Resources */,
+				9CB822942BBA8D0500F549A7 /* MacSafeiPhoneFineWovenWallet.png in Resources */,
 				9CB8227E2BBA8D0500F549A7 /* MacStudio.png in Resources */,
 				9CB8227C2BBA8D0500F549A7 /* MacMini.png in Resources */,
 				9CB822862BBA8D0500F549A7 /* iPhone15Pro.jpeg in Resources */,
 				9C252D9A2BBA4BF6000AB9DA /* Base in Resources */,
-				9CB822892BBA8D0500F549A7 /* iPad(9세대).png in Resources */,
-				9CB8228A2BBA8D0500F549A7 /* iPad(10세대).png in Resources */,
+				9CB822892BBA8D0500F549A7 /* iPad(9th generation).png in Resources */,
+				9CB8228A2BBA8D0500F549A7 /* iPad(10th generation).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

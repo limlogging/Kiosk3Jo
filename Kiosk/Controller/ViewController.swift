@@ -55,6 +55,22 @@ class ViewController: UIViewController {
         if selectedList.count == 0 {
             notiLabel.isHidden = true
         } else {
+            let oAlert = UIAlertController(title: "주문하기", message: "담으신 상품을 결제하시겠습니까??", preferredStyle: .alert)
+            
+            let yes = UIAlertAction(title: "네", style: .default) { action in
+                
+                self.selectedList = []
+                self.getData()
+                self.tableView.reloadData()
+            }
+            
+            let no = UIAlertAction(title: "아니오", style: .cancel)
+            
+            oAlert.addAction(yes)
+            oAlert.addAction(no)
+            
+            self.present(oAlert, animated: true)
+
             notiLabel.text = String(selectedList.map{$0.value}.reduce(0, +))
             notiLabel.isHidden = false
         }
