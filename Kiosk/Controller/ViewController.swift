@@ -12,7 +12,6 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var productSegment: UISegmentedControl!
-    
     @IBOutlet weak var notiLabel: UILabel!
     
     let dataManager = DataManager()
@@ -27,21 +26,15 @@ class ViewController: UIViewController {
     
     var modalViewController = ModalViewController()
     var dimmingView: UIView?
+    var selectedList: [AppleProduct] = [AppleProduct]() //장바구니
     
-    
-    var selectedList: [AppleProduct] = [AppleProduct]()
-     
     // MARK: - viewDidLoad 설정
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         productSegment.selectedSegmentIndex = 0
         segmentValueChanged(productSegment)
-        
         numberFormatter.numberStyle = .decimal
-        
-        
         addDimmingView()
         setLabel()
     }
