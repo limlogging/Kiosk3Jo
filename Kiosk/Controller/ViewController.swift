@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     var modalViewController = ModalViewController()
     var dimmingView: UIView?
-    var selectedList: [AppleProduct] = [AppleProduct]()
+   
     
     // MARK: - viewDidLoad 설정
     override func viewDidLoad() {
@@ -52,21 +52,10 @@ class ViewController: UIViewController {
     }
     
     func setLabel () {
-        if selectedList.count == 0 {
+        if ListManager.shared.list.count == 0 {
             notiLabel.isHidden = true
         } else {
-//            let oAlert = UIAlertController(title: "주문하기", message: "담으신 상품을 결제하시겠습니까??", preferredStyle: .alert)
-//            let yes = UIAlertAction(title: "네", style: .default) { action in
-//                
-//                self.selectedList = []
-//                self.getData()
-//                self.tableView.reloadData()
-//            }
-//            let no = UIAlertAction(title: "아니오", style: .cancel)
-//            oAlert.addAction(yes)
-//            oAlert.addAction(no)
-//            self.present(oAlert, animated: true)
-            notiLabel.text = String(selectedList.map{$0.value}.reduce(0, +))
+            notiLabel.text = String(ListManager.shared.list.map{$0.value}.reduce(0, +))
             notiLabel.isHidden = false
         }
     }
@@ -138,9 +127,7 @@ class ViewController: UIViewController {
     // MARK: - 장바구니 선택
     @IBAction func openCart(_ sender: UIButton) {
         let modalVC = self.modalViewController
-        modalVC.delegate = self
-        modalVC.selectedList.removeAll()
-        modalVC.selectedList = selectedList
+        
         
         // 사이드 메뉴 뷰 컨트롤러를 자식으로 추가하고 뷰 계층 구조에 추가.
         self.addChild(modalVC)
@@ -180,12 +167,12 @@ class ViewController: UIViewController {
 // MARK: - collectionView delegate, datasource 확장
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedList.append(filteredProducts[indexPath.item])
+        ListManager.shared.list.append(filteredProducts[indexPath.item])
                 
-        if selectedList.map({$0.name}).filter({$0 == filteredProducts[indexPath.item].name}).count == 2 {
+        if ListManager.shared.list.map({$0.name}).filter({$0 == filteredProducts[indexPath.item].name}).count == 2 {
             let alert = UIAlertController(title: "중복 선택 확인", message: "중복으로 선택 되었습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
-            selectedList.removeLast()
+            ListManager.shared.list.removeLast()
             
             self.present(alert, animated: true)
         }
@@ -231,12 +218,5 @@ extension ViewController: UISearchBarDelegate {
             filteredProducts = dataManager.products.filter{$0.name.contains(searchText)}
             mainCollectionView.reloadData()
         }
-    }
-}
-
-// MARK: - Delegate를 통한 데이터 전달 (From ModalVC)
-extension ViewController: sendList {
-    func sendData(dataList: [AppleProduct]) {
-        selectedList = dataList
     }
 }

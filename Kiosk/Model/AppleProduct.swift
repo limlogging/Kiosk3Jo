@@ -9,19 +9,11 @@ import Foundation
 import UIKit
 
 struct AppleProduct {
+    
     let image: UIImage?
     let name: String
     let price: Int
     let category: String
     var value: Int 
-}
-
-
-// MARK: - Home 데이터
-struct HomeItem {
-    let image: UIImage
     
-    init(imageName: String) {
-        self.image = UIImage(named: imageName)!
-    }
 }

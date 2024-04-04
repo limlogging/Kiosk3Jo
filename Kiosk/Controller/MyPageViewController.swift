@@ -68,6 +68,7 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
                 
         profileUI()
+        print(ListManager.shared.list)
     }
     
     @objc func changeImage(_ sender: UIButton) {
