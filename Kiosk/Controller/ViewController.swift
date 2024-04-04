@@ -10,7 +10,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var productSegment: UISegmentedControl!
     
@@ -36,7 +35,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupCollectionView()
         productSegment.selectedSegmentIndex = 0
         segmentValueChanged(productSegment)

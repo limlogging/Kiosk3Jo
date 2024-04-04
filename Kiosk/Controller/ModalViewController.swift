@@ -318,3 +318,4 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
         getData()
     }
 }
+
