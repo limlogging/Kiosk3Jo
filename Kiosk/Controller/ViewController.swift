@@ -125,7 +125,7 @@ class ViewController: UIViewController {
             
         } else {
             
-            let oAlert = UIAlertController(title: "주문하기", message: "담으신 상품을 결제하시겠습니까?", preferredStyle: .alert)
+            let oAlert = UIAlertController(title: "주문하기", message: "담으신 상품을 결제하시겠습니까??", preferredStyle: .alert)
             
             let yes = UIAlertAction(title: "네", style: .default) { action in
                 
