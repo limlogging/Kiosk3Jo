@@ -15,3 +15,13 @@ struct AppleProduct {
     let category: String
     var value: Int 
 }
+
+
+// MARK: - Home 데이터
+struct HomeItem {
+    let image: UIImage
+    
+    init(imageName: String) {
+        self.image = UIImage(named: imageName)!
+    }
+}
