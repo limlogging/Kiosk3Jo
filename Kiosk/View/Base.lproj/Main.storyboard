@@ -146,7 +146,7 @@
                     <connections>
                         <segue destination="0TG-LC-Fm1" kind="relationship" relationship="viewControllers" id="0DG-NU-Kzp"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="yv4-ov-UHF"/>
-                        <segue destination="WgG-Kc-Fv8" kind="relationship" relationship="viewControllers" id="MGZ-lt-HxM"/>
+                        <segue destination="WgG-Kc-Fv8" kind="relationship" relationship="viewControllers" destinationCreationSelector="myPageSegue" id="MGZ-lt-HxM"/>
                         <segue destination="mJy-5V-lEK" kind="relationship" relationship="viewControllers" id="NKs-f3-LPO"/>
                     </connections>
                 </tabBarController>
