@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
-        mainCollectionView.register(ProductCell.self, forCellWithReuseIdentifier: "ProductCell")
+        mainCollectionView.register(ProductCell.self, forCellWithReuseIdentifier: Constants.contentName)
         mainCollectionView.alwaysBounceVertical = true
     }
     
@@ -126,30 +126,34 @@ class ViewController: UIViewController {
     
     // MARK: - 장바구니 선택
     @IBAction func openCart(_ sender: UIButton) {
-        let modalVC = self.modalViewController
         
-        
-        // 사이드 메뉴 뷰 컨트롤러를 자식으로 추가하고 뷰 계층 구조에 추가.
-        self.addChild(modalVC)
-        self.view.addSubview(modalVC.view)
-        
-        let menuWidth = self.view.frame.width // 가로는 현재 화면과 동일하게
-        let menuHeight = self.view.frame.height * 0.3 // 높이만 30%로 설정
-        
-        // 사이드 메뉴의 시작 위치를 화면 아래로 설정.
-        modalVC.view.frame = CGRect(x: 0, y: view.frame.height, width: menuWidth, height: menuHeight)
-        
-        // 어두운 배경 뷰를 보이게 한다.
-        self.dimmingView?.isHidden = false
-        self.dimmingView?.alpha = 0.6
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            // 사이드 메뉴를 화면에 표시.
-            modalVC.view.frame = CGRect(x: 0, y: self.view.frame.height - menuHeight, width: menuWidth, height: menuHeight)
-            // 어두운 배경 뷰의 투명도를 조절.
-            self.dimmingView?.alpha = 0.5
-        })
-        
+        if !ListManager.shared.list.isEmpty {
+            let modalVC = self.modalViewController
+            // 사이드 메뉴 뷰 컨트롤러를 자식으로 추가하고 뷰 계층 구조에 추가.
+            self.addChild(modalVC)
+            self.view.addSubview(modalVC.view)
+            
+            let menuWidth = self.view.frame.width // 가로는 현재 화면과 동일하게
+            let menuHeight = self.view.frame.height * 0.3 // 높이만 30%로 설정
+            
+            // 사이드 메뉴의 시작 위치를 화면 아래로 설정.
+            modalVC.view.frame = CGRect(x: 0, y: view.frame.height, width: menuWidth, height: menuHeight)
+            
+            // 어두운 배경 뷰를 보이게 한다.
+            self.dimmingView?.isHidden = false
+            self.dimmingView?.alpha = 0.6
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                // 사이드 메뉴를 화면에 표시.
+                modalVC.view.frame = CGRect(x: 0, y: self.view.frame.height - menuHeight, width: menuWidth, height: menuHeight)
+                // 어두운 배경 뷰의 투명도를 조절.
+                self.dimmingView?.alpha = 0.5
+            })
+        } else {
+            let alert = UIAlertController(title: "현재 상품이 없습니다", message: "제품을 담아주세요", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
+            self.present(alert, animated: true)
+        }
     }
     
     // MARK: - collectionview cell 크기 조절
@@ -185,7 +189,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     // MARK: - collectionView 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentName, for: indexPath) as! ProductCell
         let product = filteredProducts[indexPath.item]
         cell.configure(with: product)
         return cell

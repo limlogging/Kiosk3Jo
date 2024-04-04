@@ -86,7 +86,7 @@
 		9C252DA12BBA4BF7000AB9DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C252DA32BBA4BF7000AB9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C8558262BBC607E00375397 /* AppleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProduct.swift; sourceTree = "<group>"; };
-		9C85582C2BBC63C700375397 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9C85582C2BBC63C700375397 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Model/Constants.swift; sourceTree = "<group>"; };
 		9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		9C99BAFE2BBE38E500D3BC06 /* CallCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenterViewController.swift; sourceTree = "<group>"; };
 		9C99BB002BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 			children = (
 				9C8558262BBC607E00375397 /* AppleProduct.swift */,
 				4D196DCF2BBA85E100311CAF /* DataManager.swift */,
-				9C85582C2BBC63C700375397 /* Constants.swift */,
 				610AE2972BBEF59700DCD7DE /* HomeItem.swift */,
 				610AE29A2BBEF8B100DCD7DE /* ListManager.swift */,
 			);
@@ -206,6 +205,7 @@
 				4D196DC92BBA836200311CAF /* View */,
 				4D196DCA2BBA836800311CAF /* Controller */,
 				9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */,
+				9C85582C2BBC63C700375397 /* Constants.swift */,
 				9C252DA02BBA4BF7000AB9DA /* LaunchScreen.storyboard */,
 				9C252DA32BBA4BF7000AB9DA /* Info.plist */,
 				9C252D9B2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld */,
