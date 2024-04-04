@@ -19,7 +19,6 @@
 		9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D9B2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld */; };
 		9C252D9F2BBA4BF7000AB9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */; };
 		9C252DA22BBA4BF7000AB9DA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9C252DA12BBA4BF7000AB9DA /* Base */; };
-		9C3E1B8F2BBD9A3A005DD42F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E1B8E2BBD9A3A005DD42F /* HomeViewController.swift */; };
 		9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8558262BBC607E00375397 /* AppleProduct.swift */; };
 		9C85582D2BBC63C700375397 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85582C2BBC63C700375397 /* Constants.swift */; };
 		9C99BAFD2BBE38A500D3BC06 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */; };
@@ -79,7 +78,6 @@
 		9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C252DA12BBA4BF7000AB9DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C252DA32BBA4BF7000AB9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C3E1B8E2BBD9A3A005DD42F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../../../../../.Trash/Kiosk3Jo/Kiosk/Controller/HomeViewController.swift; sourceTree = "<group>"; };
 		9C8558262BBC607E00375397 /* AppleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProduct.swift; sourceTree = "<group>"; };
 		9C85582C2BBC63C700375397 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			children = (
 				9C252D962BBA4BF6000AB9DA /* ViewController.swift */,
 				61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */,
-				9C3E1B8E2BBD9A3A005DD42F /* HomeViewController.swift */,
 				9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */,
 				9C99BAFE2BBE38E500D3BC06 /* CallCenterViewController.swift */,
 			);
@@ -405,7 +402,6 @@
 				9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */,
 				61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */,
 				9C99BAFD2BBE38A500D3BC06 /* MyPageViewController.swift in Sources */,
-				9C3E1B8F2BBD9A3A005DD42F /* HomeViewController.swift in Sources */,
 				4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */,
 				9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */,
 				9C85582D2BBC63C700375397 /* Constants.swift in Sources */,
