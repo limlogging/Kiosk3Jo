@@ -54,3 +54,20 @@ class DataManager {
         products.append(contentsOf: etcAccessory)
     }
 }
+
+
+// MARK: - HOME 데이터
+
+class HomeDataManager {
+    static func generateDummyData() -> [HomeItem] {
+        return [
+            HomeItem(imageName: "homeImage7"),
+            HomeItem(imageName: "homeImage3"),
+            HomeItem(imageName: "homeImage1"),
+            HomeItem(imageName: "homeImage4"),
+            HomeItem(imageName: "homeImage5"),
+            HomeItem(imageName: "homeImage6"),
+            HomeItem(imageName: "homeImage2")
+        ]
+    }
+}
