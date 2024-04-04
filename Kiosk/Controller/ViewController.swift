@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     var modalViewController = ModalViewController()
     var dimmingView: UIView?
     var selectedList: [AppleProduct] = [AppleProduct]()
-
+    
     // MARK: - viewDidLoad 설정
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,6 @@ class ViewController: UIViewController {
     }
     
     func setLabel () {
-        
         if selectedList.count == 0 {
             notiLabel.isHidden = true
         } else {
@@ -164,14 +163,14 @@ class ViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return layout
     }
+    
 }
 
 // MARK: - collectionView delegate, datasource 확장
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedList.append(filteredProducts[indexPath.item])
-        
+                
         if selectedList.map({$0.name}).filter({$0 == filteredProducts[indexPath.item].name}).count == 2 {
             let alert = UIAlertController(title: "중복 선택 확인", message: "중복으로 선택 되었습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
@@ -222,7 +221,6 @@ extension ViewController: UISearchBarDelegate {
             mainCollectionView.reloadData()
         }
     }
-    
 }
 
 // MARK: - Delegate를 통한 데이터 전달 (From ModalVC)
