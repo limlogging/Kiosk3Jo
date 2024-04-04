@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DCF2BBA85E100311CAF /* DataManager.swift */; };
 		4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DD52BBA9CCE00311CAF /* ProductCell.swift */; };
-		4D89ACB72BBE9D070073452E /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89ACB62BBE9D070073452E /* HomeCollectionViewCell.swift */; };
-		4D89ACB92BBE9D1C0073452E /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89ACB82BBE9D1C0073452E /* HeaderCollectionReusableView.swift */; };
-		4D89ACBB2BBE9D570073452E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89ACBA2BBE9D570073452E /* HomeViewController.swift */; };
 		61F971D82BBCC9F000A472C0 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F971D62BBCC9EF00A472C0 /* PriceCell.swift */; };
 		61F971D92BBCC9F000A472C0 /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F971D72BBCC9F000A472C0 /* PriceCell.xib */; };
 		61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */; };
@@ -26,6 +23,9 @@
 		9C85582D2BBC63C700375397 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85582C2BBC63C700375397 /* Constants.swift */; };
 		9C99BAFD2BBE38A500D3BC06 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */; };
 		9C99BAFF2BBE38E500D3BC06 /* CallCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BAFE2BBE38E500D3BC06 /* CallCenterViewController.swift */; };
+		9C99BB022BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BB002BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift */; };
+		9C99BB032BBEA50A00D3BC06 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BB012BBEA50A00D3BC06 /* HomeCollectionViewCell.swift */; };
+		9C99BB052BBEA51D00D3BC06 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BB042BBEA51D00D3BC06 /* HomeViewController.swift */; };
 		9CB822762BBA8D0500F549A7 /* iMac.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8224B2BBA8D0500F549A7 /* iMac.png */; };
 		9CB822772BBA8D0500F549A7 /* MacBookAir13(M2).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8224C2BBA8D0500F549A7 /* MacBookAir13(M2).png */; };
 		9CB822782BBA8D0500F549A7 /* MacBookAir13(M3).png in Resources */ = {isa = PBXBuildFile; fileRef = 9CB8224D2BBA8D0500F549A7 /* MacBookAir13(M3).png */; };
@@ -69,9 +69,6 @@
 /* Begin PBXFileReference section */
 		4D196DCF2BBA85E100311CAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4D196DD52BBA9CCE00311CAF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		4D89ACB62BBE9D070073452E /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCollectionViewCell.swift; path = ../../../../mainProject/HomeTab/HomeTab/View/HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		4D89ACB82BBE9D1C0073452E /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderCollectionReusableView.swift; path = ../../../../mainProject/HomeTab/HomeTab/View/HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		4D89ACBA2BBE9D570073452E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../../mainProject/HomeTab/HomeTab/Controller/HomeViewController.swift; sourceTree = "<group>"; };
 		61F971D62BBCC9EF00A472C0 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
 		61F971D72BBCC9F000A472C0 /* PriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
 		61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +85,9 @@
 		9C85582C2BBC63C700375397 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		9C99BAFE2BBE38E500D3BC06 /* CallCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenterViewController.swift; sourceTree = "<group>"; };
+		9C99BB002BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		9C99BB012BBEA50A00D3BC06 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C99BB042BBEA51D00D3BC06 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CB8224B2BBA8D0500F549A7 /* iMac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iMac.png; sourceTree = "<group>"; };
 		9CB8224C2BBA8D0500F549A7 /* MacBookAir13(M2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MacBookAir13(M2).png"; sourceTree = "<group>"; };
 		9CB8224D2BBA8D0500F549A7 /* MacBookAir13(M3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MacBookAir13(M3).png"; sourceTree = "<group>"; };
@@ -154,10 +154,10 @@
 			children = (
 				61F971D62BBCC9EF00A472C0 /* PriceCell.swift */,
 				4D196DD52BBA9CCE00311CAF /* ProductCell.swift */,
-				4D89ACB62BBE9D070073452E /* HomeCollectionViewCell.swift */,
-				4D89ACB82BBE9D1C0073452E /* HeaderCollectionReusableView.swift */,
 				61F971D72BBCC9F000A472C0 /* PriceCell.xib */,
 				9C252D982BBA4BF6000AB9DA /* Main.storyboard */,
+				9C99BB002BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift */,
+				9C99BB012BBEA50A00D3BC06 /* HomeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 			children = (
 				9C252D962BBA4BF6000AB9DA /* ViewController.swift */,
 				61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */,
-				4D89ACBA2BBE9D570073452E /* HomeViewController.swift */,
+				9C99BB042BBEA51D00D3BC06 /* HomeViewController.swift */,
 				9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */,
 				9C99BAFE2BBE38E500D3BC06 /* CallCenterViewController.swift */,
 			);
@@ -402,17 +402,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D89ACB92BBE9D1C0073452E /* HeaderCollectionReusableView.swift in Sources */,
+				9C99BB022BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift in Sources */,
 				9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */,
 				4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */,
 				9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */,
 				61F971D82BBCC9F000A472C0 /* PriceCell.swift in Sources */,
-				4D89ACBB2BBE9D570073452E /* HomeViewController.swift in Sources */,
+				9C99BB032BBEA50A00D3BC06 /* HomeCollectionViewCell.swift in Sources */,
 				9C99BAFF2BBE38E500D3BC06 /* CallCenterViewController.swift in Sources */,
-				4D89ACB72BBE9D070073452E /* HomeCollectionViewCell.swift in Sources */,
 				9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */,
 				9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */,
 				61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */,
+				9C99BB052BBEA51D00D3BC06 /* HomeViewController.swift in Sources */,
 				9C99BAFD2BBE38A500D3BC06 /* MyPageViewController.swift in Sources */,
 				4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */,
 				9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */,
