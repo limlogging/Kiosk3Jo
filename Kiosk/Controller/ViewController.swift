@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var productSegment: UISegmentedControl!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var notiLabel: UILabel!
     
     let dataManager = DataManager()
@@ -28,13 +29,23 @@ class ViewController: UIViewController {
     var modalViewController = ModalViewController()
     var dimmingView: UIView?
     
-    
     var selectedList: [AppleProduct] = [AppleProduct]()
-     
+    
     // MARK: - viewDidLoad 설정
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        notiLabel.backgroundColor = .red
+        notiLabel.textColor = .white
+        notiLabel.layer.masksToBounds = true
+        notiLabel.layer.cornerRadius = notiLabel.frame.width/2
+        
+        searchBar.placeholder = "검색어를 입력하세요."
+        searchBar.autocorrectionType = .no
+        searchBar.spellCheckingType = .no
+        
+        searchBar.delegate = self
         setupCollectionView()
         productSegment.selectedSegmentIndex = 0
         segmentValueChanged(productSegment)
@@ -45,12 +56,8 @@ class ViewController: UIViewController {
         addDimmingView()
         setLabel()
     }
-
+    
     func setLabel () {
-        notiLabel.backgroundColor = .red
-        notiLabel.textColor = .white
-        notiLabel.layer.masksToBounds = true
-        notiLabel.layer.cornerRadius = notiLabel.frame.width/2
         
         if selectedList.count == 0 {
             notiLabel.isHidden = true
@@ -75,14 +82,19 @@ class ViewController: UIViewController {
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
+            searchBar.text = ""
             filteredProducts = dataManager.products.filter { $0.category == "맥북" }
         case 1:
+            searchBar.text = ""
             filteredProducts = dataManager.products.filter { $0.category == "아이폰" }
         case 2:
+            searchBar.text = ""
             filteredProducts = dataManager.products.filter { $0.category == "패드" }
         case 3:
+            searchBar.text = ""
             filteredProducts = dataManager.products.filter { $0.category == "워치" }
         case 4:
+            searchBar.text = ""
             filteredProducts = dataManager.products.filter { $0.category == "악세사리" }
         default:
             break
@@ -125,7 +137,7 @@ class ViewController: UIViewController {
         modalVC.delegate = self
         modalVC.selectedList.removeAll()
         modalVC.selectedList = selectedList
-       
+        
         // 사이드 메뉴 뷰 컨트롤러를 자식으로 추가하고 뷰 계층 구조에 추가.
         self.addChild(modalVC)
         self.view.addSubview(modalVC.view)
@@ -170,7 +182,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             let alert = UIAlertController(title: "중복 선택 확인", message: "중복으로 선택 되었습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
             selectedList.removeLast()
-           
+            
             self.present(alert, animated: true)
         }
         setLabel()
@@ -187,6 +199,36 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.configure(with: product)
         return cell
     }
+}
+
+// MARK: - SearchBar
+extension ViewController: UISearchBarDelegate {
+    
+    // 입력 취소시
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+    }
+    
+    // 활성화된 키보드에서 검색을 눌렀을때 키보드 사라짐.
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    // 검색어의 변화가 있을때
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // 지웠을때
+        if searchBar.text?.count == 0 {
+            productSegment.selectedSegmentIndex = 0 // 인덱스 mac으로 되돌리기
+            filteredProducts = dataManager.products.filter { $0.category == "맥북" }
+            mainCollectionView.reloadData()
+            
+        // 타이핑 하고 있을때
+        } else {
+            filteredProducts = dataManager.products.filter{$0.name.contains(searchText)}
+            mainCollectionView.reloadData()
+        }
+    }
+    
 }
 
 // MARK: - Delegate를 통한 데이터 전달 (From ModalVC)
