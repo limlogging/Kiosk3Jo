@@ -42,6 +42,15 @@ class ProductCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let newLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.text = "New"
+        label.textColor = .red
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
 // MARK: - autolayout 구현
     override init(frame: CGRect) {
@@ -51,6 +60,7 @@ class ProductCell: UICollectionViewCell {
         containerView.addSubview(productImage)
         containerView.addSubview(productLabel)
         containerView.addSubview(productPrice)
+        productImage.addSubview(newLabel)
         
         containerView.layer.masksToBounds = false
         containerView.layer.shadowColor = UIColor.black.cgColor
@@ -79,7 +89,10 @@ class ProductCell: UICollectionViewCell {
             productPrice.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 4),
             productPrice.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             productPrice.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            productPrice.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
+            productPrice.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            
+            newLabel.topAnchor.constraint(equalTo: productImage.topAnchor,constant: 5),
+            newLabel.leadingAnchor.constraint(equalTo: productImage.leadingAnchor,constant: 5),
         ])
     }
     
