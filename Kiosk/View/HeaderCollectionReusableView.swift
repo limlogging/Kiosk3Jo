@@ -26,10 +26,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 50), // 헤더의 상단으로부터 10 포인트 아래에 위치하도록 설정
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 50),
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             label.trailingAnchor.constraint(equalTo: trailingAnchor),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor) // 헤더의 하단으로부터 10 포인트 위에 위치하도록 설정
+            label.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
