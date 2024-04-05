@@ -50,7 +50,13 @@ class ViewController: UIViewController {
         numberFormatter.numberStyle = .decimal
         addDimmingView()
         setLabel()
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        mainCollectionView.reloadData()
+    }
+    
     
     func setLabel () {
         if ListManager.shared.list.count == 0 {
@@ -193,6 +199,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentName, for: indexPath) as! ProductCell
         let product = filteredProducts[indexPath.item]
         cell.configure(with: product)
+        if product.isNew {
+            cell.newLabel.isHidden = false
+            cell.newLabel.blink()
+        } else {
+            cell.newLabel.isHidden = true
+        }
+        
         return cell
     }
 }
@@ -223,5 +236,23 @@ extension ViewController: UISearchBarDelegate {
             filteredProducts = dataManager.products.filter{$0.name.contains(searchText)}
             mainCollectionView.reloadData()
         }
+    }
+}
+
+// MARK: - 깜빡이는 효과를 주어 신상품을 강조.
+
+extension UIView {
+    func blink() {
+        self.alpha = 0.7;
+        UIView.animate(withDuration: 0.5, //Time duration you want,
+                       delay: 0.0,
+                       options: [.curveEaseInOut, .autoreverse, .repeat],
+                       animations: { [weak self] in self?.alpha = 0.0 },
+                       completion: { [weak self] _ in self?.alpha = 1.0 })
+    }
+    
+    func stopBlink() {
+        layer.removeAllAnimations()
+        alpha = 1
     }
 }

@@ -15,6 +15,7 @@ struct AppleProduct {
     let price: Int
     let category: String
     var value: Int 
+    var isNew: Bool
     
 }
 
