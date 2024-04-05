@@ -25,7 +25,7 @@ class CallCenterViewController: UIViewController {
 // MARK: - 셀 내 데이터
     func setupData() {
         callCenter = [
-            Menu(title: "매장찾기", leftImage: "checkmark.circle", rightImage: "greaterthan.circle"),
+            Menu(title: "매장찾기", leftImage: "location.magnifyingglass", rightImage: "greaterthan.circle"),
             Menu(title: "마이 페이지", leftImage: "person.circle", rightImage: "greaterthan.circle"),
             Menu(title: "이용 약관", leftImage: "list.bullet.rectangle", rightImage: "greaterthan.circle"),
             Menu(title: "개인정보 처리 방침", leftImage: "list.bullet.rectangle", rightImage: "greaterthan.circle"),
