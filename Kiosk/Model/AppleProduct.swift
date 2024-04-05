@@ -20,10 +20,4 @@ struct AppleProduct {
 }
 
 
-// MARK: - 고객센터 데이터
-struct Menu {
-    let title: String
-    let leftImage: String?
-    let rightImage: String?
-}
 

@@ -31,10 +31,8 @@ class ModalViewController: UIViewController {
     // MARK: - 수량
     private lazy var countLabel: UILabel = {
         let label = UILabel()
-        //label.backgroundColor = .green
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        
         return label
     }()
     
@@ -49,6 +47,7 @@ class ModalViewController: UIViewController {
     private lazy var questionButton: UIButton = {
         let button = UIButton()
         button.setTitle("문의하기", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 1
         button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -62,6 +61,7 @@ class ModalViewController: UIViewController {
     private lazy var orderButton: UIButton = {
         let button = UIButton()
         button.setTitle("주문하기", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 1
         button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -75,7 +75,9 @@ class ModalViewController: UIViewController {
     private lazy var cancelButton: UIButton = {
         let button = UIButton()
         button.setTitle("취소하기", for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .black
         button.layer.borderWidth = 1
         button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         button.layer.cornerRadius = 5
@@ -86,18 +88,14 @@ class ModalViewController: UIViewController {
     
     let numberFormatter = NumberFormatter()
     
-
     var totalCount = 0
     var totalPrice = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .lightGray
-        
+        view.backgroundColor = .white
         numberFormatter.numberStyle = .decimal
-        
         applyConstraints()
         
         priceLabel.text = "0 원"
@@ -135,12 +133,12 @@ class ModalViewController: UIViewController {
         view.addSubview(cancelButton)
         
         let priceLabelConstraints = [
-            priceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            priceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             priceLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 10)
         ]
         
         let countLabelConstraints = [
-            countLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            countLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             countLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 10)
         ]
         

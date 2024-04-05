@@ -35,7 +35,7 @@ class ProductCell: UICollectionViewCell {
     // 제품 이름 레이블
     let productLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -43,7 +43,7 @@ class ProductCell: UICollectionViewCell {
     // 제품 가격 레이블
     let productPrice: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -60,9 +60,10 @@ class ProductCell: UICollectionViewCell {
     // MARK: - 장바구니 추가 버튼
     private lazy var cartAddButton: UIButton = {
         let button = UIButton()
-        button.setImage(.init(systemName: "cart.badge.plus"), for: .normal)
+        button.setImage(.init(systemName: "archivebox.fill"), for: .normal)
         button.addTarget(self, action: #selector(addToCart(_: )), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .black
         return button
     }()
     
@@ -99,8 +100,8 @@ class ProductCell: UICollectionViewCell {
             productImage.topAnchor.constraint(equalTo: topAnchor),
             productImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: trailingAnchor),
-            productImage.heightAnchor.constraint(equalToConstant: 150),
-            productImage.widthAnchor.constraint(equalToConstant: 150),
+            productImage.heightAnchor.constraint(equalToConstant: 170),
+            productImage.widthAnchor.constraint(equalToConstant: 170),
             
             productLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 8),
             productLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
@@ -114,9 +115,9 @@ class ProductCell: UICollectionViewCell {
             newLabel.topAnchor.constraint(equalTo: productImage.topAnchor,constant: 5),
             newLabel.leadingAnchor.constraint(equalTo: productImage.leadingAnchor,constant: 5),
             
-            cartAddButton.topAnchor.constraint(equalTo: productPrice.topAnchor),
-            cartAddButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5)
-        ])
+            cartAddButton.topAnchor.constraint(equalTo: productPrice.topAnchor, constant: -3),
+            cartAddButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
+            ])
     }
     
     required init?(coder: NSCoder) {
@@ -139,7 +140,7 @@ class ProductCell: UICollectionViewCell {
     
     // MARK: - 장바구니 추가 버튼 구현 
     @objc func addToCart(_ sender: UIButton) {
-        print("장바구니 추가 버튼 클릭 ^^ ")
+
         cartDelegate?.addToCart(self)
     }
 }
