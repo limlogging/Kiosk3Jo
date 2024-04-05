@@ -16,18 +16,11 @@
 		610AE29B2BBEF8B100DCD7DE /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610AE29A2BBEF8B100DCD7DE /* ListManager.swift */; };
 		61F971DB2BBCD13D00A472C0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */; };
 		6B3451182BBF924B00B8CFCA /* 20WUSB-CpowerAdapter.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3451172BBF924B00B8CFCA /* 20WUSB-CpowerAdapter.png */; };
-		6B34511A2BBF927B00B8CFCA /* AirTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3451192BBF927B00B8CFCA /* AirTag.png */; };
+		6B34511A2BBF927B00B8CFCA /* (null) in Resources */ = {isa = PBXBuildFile; };
 		6B34511C2BBF929800B8CFCA /* AppleWatchHermes.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B34511B2BBF929800B8CFCA /* AppleWatchHermes.png */; };
 		6B34511E2BBF92A900B8CFCA /* AppleWatchUltra2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B34511D2BBF92A900B8CFCA /* AppleWatchUltra2.png */; };
-		6B3451202BBF92BC00B8CFCA /* iPhone14.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B34511F2BBF92BC00B8CFCA /* iPhone14.png */; };
-		6B3451222BBF92C800B8CFCA /* iPhone15.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3451212BBF92C800B8CFCA /* iPhone15.png */; };
-		6B3451242BBF92D600B8CFCA /* iPhone15Pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3451232BBF92D600B8CFCA /* iPhone15Pro.png */; };
-		6B3451262BBF92E500B8CFCA /* iPhoneSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3451252BBF92E500B8CFCA /* iPhoneSE.png */; };
-		6B3451282BBF92F100B8CFCA /* Keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3451272BBF92F100B8CFCA /* Keyboard.png */; };
-		6B34512A2BBF930400B8CFCA /* MacSafeiPhone15ProClearCase.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3451292BBF930400B8CFCA /* MacSafeiPhone15ProClearCase.png */; };
-		6B34512C2BBF932F00B8CFCA /* MacBookPro16.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B34512B2BBF932F00B8CFCA /* MacBookPro16.png */; };
-		6B34512E2BBF934500B8CFCA /* MacPro.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B34512D2BBF934500B8CFCA /* MacPro.png */; };
-		6B3451302BBF935A00B8CFCA /* ProDisplayXDR.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B34512F2BBF935A00B8CFCA /* ProDisplayXDR.png */; };
+		6B3451282BBF92F100B8CFCA /* (null) in Resources */ = {isa = PBXBuildFile; };
+		6B34512A2BBF930400B8CFCA /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */; };
 		9C252D952BBA4BF6000AB9DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */; };
 		9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D962BBA4BF6000AB9DA /* ViewController.swift */; };
@@ -35,6 +28,17 @@
 		9C252D9D2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C252D9B2BBA4BF6000AB9DA /* Kiosk.xcdatamodeld */; };
 		9C252D9F2BBA4BF7000AB9DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */; };
 		9C252DA22BBA4BF7000AB9DA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9C252DA12BBA4BF7000AB9DA /* Base */; };
+		9C3A075E2BBF9DA300B89E82 /* MyPageCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A075D2BBF9DA300B89E82 /* MyPageCartTableViewCell.swift */; };
+		9C3A07642BBFA35F00B89E82 /* AirTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07632BBFA35F00B89E82 /* AirTag.png */; };
+		9C3A07662BBFA3B500B89E82 /* MacSafeiPhone15ProClearCase.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07652BBFA3B500B89E82 /* MacSafeiPhone15ProClearCase.png */; };
+		9C3A07682BBFA3C400B89E82 /* Keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07672BBFA3C400B89E82 /* Keyboard.png */; };
+		9C3A076A2BBFA3E000B89E82 /* iPhone14.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07692BBFA3E000B89E82 /* iPhone14.png */; };
+		9C3A076C2BBFA3E700B89E82 /* iPhone15.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A076B2BBFA3E700B89E82 /* iPhone15.png */; };
+		9C3A076E2BBFA3EF00B89E82 /* iPhone15Pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A076D2BBFA3EF00B89E82 /* iPhone15Pro.png */; };
+		9C3A07702BBFA3F500B89E82 /* iPhoneSE.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A076F2BBFA3F500B89E82 /* iPhoneSE.png */; };
+		9C3A07722BBFA40600B89E82 /* MacBookPro16.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07712BBFA40600B89E82 /* MacBookPro16.png */; };
+		9C3A07742BBFA40E00B89E82 /* MacPro.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07732BBFA40E00B89E82 /* MacPro.png */; };
+		9C3A07762BBFA41700B89E82 /* ProDisplayXDR.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07752BBFA41700B89E82 /* ProDisplayXDR.png */; };
 		9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8558262BBC607E00375397 /* AppleProduct.swift */; };
 		9C85582D2BBC63C700375397 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85582C2BBC63C700375397 /* Constants.swift */; };
 		9C99BAFD2BBE38A500D3BC06 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */; };
@@ -79,18 +83,8 @@
 		610AE29A2BBEF8B100DCD7DE /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		61F971DA2BBCD13D00A472C0 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		6B3451172BBF924B00B8CFCA /* 20WUSB-CpowerAdapter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20WUSB-CpowerAdapter.png"; sourceTree = "<group>"; };
-		6B3451192BBF927B00B8CFCA /* AirTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AirTag.png; path = ../../../../../../Downloads/zip_session_90d69cdfed44ce740b6e9a321c1a8742/AirTag.png; sourceTree = "<group>"; };
 		6B34511B2BBF929800B8CFCA /* AppleWatchHermes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleWatchHermes.png; sourceTree = "<group>"; };
 		6B34511D2BBF92A900B8CFCA /* AppleWatchUltra2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleWatchUltra2.png; sourceTree = "<group>"; };
-		6B34511F2BBF92BC00B8CFCA /* iPhone14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhone14.png; path = ../../../../../../Downloads/zip_session_90d69cdfed44ce740b6e9a321c1a8742/iPhone14.png; sourceTree = "<group>"; };
-		6B3451212BBF92C800B8CFCA /* iPhone15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhone15.png; path = ../../../../../../Downloads/zip_session_90d69cdfed44ce740b6e9a321c1a8742/iPhone15.png; sourceTree = "<group>"; };
-		6B3451232BBF92D600B8CFCA /* iPhone15Pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhone15Pro.png; path = ../../../../../../Downloads/zip_session_90d69cdfed44ce740b6e9a321c1a8742/iPhone15Pro.png; sourceTree = "<group>"; };
-		6B3451252BBF92E500B8CFCA /* iPhoneSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneSE.png; path = ../../../../../../Downloads/zip_session_90d69cdfed44ce740b6e9a321c1a8742/iPhoneSE.png; sourceTree = "<group>"; };
-		6B3451272BBF92F100B8CFCA /* Keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Keyboard.png; path = ../../../../../../Downloads/zip_session_90d69cdfed44ce740b6e9a321c1a8742/Keyboard.png; sourceTree = "<group>"; };
-		6B3451292BBF930400B8CFCA /* MacSafeiPhone15ProClearCase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MacSafeiPhone15ProClearCase.png; path = ../../../../../../Downloads/zip_session_90d69cdfed44ce740b6e9a321c1a8742/MacSafeiPhone15ProClearCase.png; sourceTree = "<group>"; };
-		6B34512B2BBF932F00B8CFCA /* MacBookPro16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MacBookPro16.png; path = ../../../../../../Downloads/11zon_converted/MacBookPro16.png; sourceTree = "<group>"; };
-		6B34512D2BBF934500B8CFCA /* MacPro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MacPro.png; path = ../../../../../../Downloads/11zon_converted/MacPro.png; sourceTree = "<group>"; };
-		6B34512F2BBF935A00B8CFCA /* ProDisplayXDR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ProDisplayXDR.png; path = ../../../../../../Downloads/11zon_converted/ProDisplayXDR.png; sourceTree = "<group>"; };
 		9C252D8F2BBA4BF6000AB9DA /* Kiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C252D922BBA4BF6000AB9DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C252D942BBA4BF6000AB9DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +94,17 @@
 		9C252D9E2BBA4BF7000AB9DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C252DA12BBA4BF7000AB9DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C252DA32BBA4BF7000AB9DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C3A075D2BBF9DA300B89E82 /* MyPageCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyPageCartTableViewCell.swift; path = "../../../../../../../.Trash/Kiosk3Jo 오전 11.38.15/Kiosk/View/MyPageCartTableViewCell.swift"; sourceTree = "<group>"; };
+		9C3A07632BBFA35F00B89E82 /* AirTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AirTag.png; sourceTree = "<group>"; };
+		9C3A07652BBFA3B500B89E82 /* MacSafeiPhone15ProClearCase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MacSafeiPhone15ProClearCase.png; sourceTree = "<group>"; };
+		9C3A07672BBFA3C400B89E82 /* Keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keyboard.png; sourceTree = "<group>"; };
+		9C3A07692BBFA3E000B89E82 /* iPhone14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone14.png; sourceTree = "<group>"; };
+		9C3A076B2BBFA3E700B89E82 /* iPhone15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone15.png; sourceTree = "<group>"; };
+		9C3A076D2BBFA3EF00B89E82 /* iPhone15Pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone15Pro.png; sourceTree = "<group>"; };
+		9C3A076F2BBFA3F500B89E82 /* iPhoneSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneSE.png; sourceTree = "<group>"; };
+		9C3A07712BBFA40600B89E82 /* MacBookPro16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MacBookPro16.png; sourceTree = "<group>"; };
+		9C3A07732BBFA40E00B89E82 /* MacPro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MacPro.png; sourceTree = "<group>"; };
+		9C3A07752BBFA41700B89E82 /* ProDisplayXDR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProDisplayXDR.png; sourceTree = "<group>"; };
 		9C8558262BBC607E00375397 /* AppleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProduct.swift; sourceTree = "<group>"; };
 		9C85582C2BBC63C700375397 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Model/Constants.swift; sourceTree = "<group>"; };
 		9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +171,7 @@
 				9C99BB002BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift */,
 				9C99BB012BBEA50A00D3BC06 /* HomeCollectionViewCell.swift */,
 				4D89ACE22BBED2420073452E /* CallCenterTableViewCell.swift */,
+				9C3A075D2BBF9DA300B89E82 /* MyPageCartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,11 +242,11 @@
 				9CB8224D2BBA8D0500F549A7 /* MacBookAir13(M3).png */,
 				9CB8224E2BBA8D0500F549A7 /* MacBookAir15(M3).png */,
 				9CB8224F2BBA8D0500F549A7 /* MacBookPro14.png */,
-				6B34512B2BBF932F00B8CFCA /* MacBookPro16.png */,
+				9C3A07712BBFA40600B89E82 /* MacBookPro16.png */,
 				9CB822512BBA8D0500F549A7 /* MacMini.png */,
-				6B34512D2BBF934500B8CFCA /* MacPro.png */,
+				9C3A07732BBFA40E00B89E82 /* MacPro.png */,
 				9CB822532BBA8D0500F549A7 /* MacStudio.png */,
-				6B34512F2BBF935A00B8CFCA /* ProDisplayXDR.png */,
+				9C3A07752BBFA41700B89E82 /* ProDisplayXDR.png */,
 				9CB822552BBA8D0500F549A7 /* StudioDisplay.png */,
 			);
 			path = Mac;
@@ -250,13 +256,13 @@
 			isa = PBXGroup;
 			children = (
 				9CB822572BBA8D0500F549A7 /* iPhone13.png */,
-				6B34511F2BBF92BC00B8CFCA /* iPhone14.png */,
+				9C3A07692BBFA3E000B89E82 /* iPhone14.png */,
 				9CB822592BBA8D0500F549A7 /* iPhone14Plus.png */,
-				6B3451212BBF92C800B8CFCA /* iPhone15.png */,
-				6B3451232BBF92D600B8CFCA /* iPhone15Pro.png */,
+				9C3A076B2BBFA3E700B89E82 /* iPhone15.png */,
 				9CB8225B2BBA8D0500F549A7 /* iPhone15Plus.png */,
+				9C3A076D2BBFA3EF00B89E82 /* iPhone15Pro.png */,
 				9CB8225D2BBA8D0500F549A7 /* iPhone15ProMax.png */,
-				6B3451252BBF92E500B8CFCA /* iPhoneSE.png */,
+				9C3A076F2BBFA3F500B89E82 /* iPhoneSE.png */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -277,15 +283,15 @@
 		9CB822702BBA8D0500F549A7 /* etc */ = {
 			isa = PBXGroup;
 			children = (
+				9C3A07632BBFA35F00B89E82 /* AirTag.png */,
 				6B3451172BBF924B00B8CFCA /* 20WUSB-CpowerAdapter.png */,
+				9C3A07672BBFA3C400B89E82 /* Keyboard.png */,
 				9CB822682BBA8D0500F549A7 /* MilaneseLoop.png */,
-				6B3451192BBF927B00B8CFCA /* AirTag.png */,
 				9CB8226C2BBA8D0500F549A7 /* MacSafeiPhoneFineWovenWallet.png */,
-				6B3451272BBF92F100B8CFCA /* Keyboard.png */,
 				9CB8226D2BBA8D0500F549A7 /* MagicMouse.png */,
 				9CB8226E2BBA8D0500F549A7 /* MagicTrackpad.png */,
-				6B3451292BBF930400B8CFCA /* MacSafeiPhone15ProClearCase.png */,
 				9CB8226F2BBA8D0500F549A7 /* MagSafeiPhone15SiliconeCase.png */,
+				9C3A07652BBFA3B500B89E82 /* MacSafeiPhone15ProClearCase.png */,
 			);
 			path = etc;
 			sourceTree = "<group>";
@@ -359,48 +365,51 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3A07682BBFA3C400B89E82 /* Keyboard.png in Resources */,
 				9CB822772BBA8D0500F549A7 /* MacBookAir13(M2).png in Resources */,
-				6B34511A2BBF927B00B8CFCA /* AirTag.png in Resources */,
-				6B3451222BBF92C800B8CFCA /* iPhone15.png in Resources */,
+				9C3A07722BBFA40600B89E82 /* MacBookPro16.png in Resources */,
+				6B34511A2BBF927B00B8CFCA /* (null) in Resources */,
 				9CB822992BBA8D0500F549A7 /* AppleWatchSE.png in Resources */,
 				9C252D9F2BBA4BF7000AB9DA /* Assets.xcassets in Resources */,
 				9CB8228B2BBA8D0500F549A7 /* iPadAir.png in Resources */,
 				6B34511C2BBF929800B8CFCA /* AppleWatchHermes.png in Resources */,
 				610AE2942BBEB31D00DCD7DE /* PriceCell.xib in Resources */,
+				9C3A076A2BBFA3E000B89E82 /* iPhone14.png in Resources */,
 				9CB822832BBA8D0500F549A7 /* iPhone14Plus.png in Resources */,
 				9CB8228E2BBA8D0500F549A7 /* iPadPro12.9.png in Resources */,
 				9CB822802BBA8D0500F549A7 /* StudioDisplay.png in Resources */,
 				9CB822782BBA8D0500F549A7 /* MacBookAir13(M3).png in Resources */,
-				6B3451262BBF92E500B8CFCA /* iPhoneSE.png in Resources */,
 				9CB822962BBA8D0500F549A7 /* MagicTrackpad.png in Resources */,
+				9C3A07702BBFA3F500B89E82 /* iPhoneSE.png in Resources */,
 				9CB8229A2BBA8D0500F549A7 /* AppleWatchSeries9.png in Resources */,
-				6B3451302BBF935A00B8CFCA /* ProDisplayXDR.png in Resources */,
 				6B3451182BBF924B00B8CFCA /* 20WUSB-CpowerAdapter.png in Resources */,
+				9C3A076C2BBFA3E700B89E82 /* iPhone15.png in Resources */,
 				9CB822902BBA8D0500F549A7 /* MilaneseLoop.png in Resources */,
 				9CB822762BBA8D0500F549A7 /* iMac.png in Resources */,
-				6B34512C2BBF932F00B8CFCA /* MacBookPro16.png in Resources */,
+				9C3A076E2BBFA3EF00B89E82 /* iPhone15Pro.png in Resources */,
 				9CB822972BBA8D0500F549A7 /* MagSafeiPhone15SiliconeCase.png in Resources */,
 				9CB822792BBA8D0500F549A7 /* MacBookAir15(M3).png in Resources */,
 				9CB8228C2BBA8D0500F549A7 /* iPadMini.png in Resources */,
 				9CB8228D2BBA8D0500F549A7 /* iPadPro11.png in Resources */,
+				9C3A07662BBFA3B500B89E82 /* MacSafeiPhone15ProClearCase.png in Resources */,
+				9C3A07762BBFA41700B89E82 /* ProDisplayXDR.png in Resources */,
 				9CB822952BBA8D0500F549A7 /* MagicMouse.png in Resources */,
 				9CB8227A2BBA8D0500F549A7 /* MacBookPro14.png in Resources */,
 				6B34511E2BBF92A900B8CFCA /* AppleWatchUltra2.png in Resources */,
 				9CB822852BBA8D0500F549A7 /* iPhone15Plus.png in Resources */,
-				6B34512A2BBF930400B8CFCA /* MacSafeiPhone15ProClearCase.png in Resources */,
+				9C3A07742BBFA40E00B89E82 /* MacPro.png in Resources */,
+				6B34512A2BBF930400B8CFCA /* (null) in Resources */,
+				9C3A07642BBFA35F00B89E82 /* AirTag.png in Resources */,
 				9CB822872BBA8D0500F549A7 /* iPhone15ProMax.png in Resources */,
-				6B3451242BBF92D600B8CFCA /* iPhone15Pro.png in Resources */,
 				9C252DA22BBA4BF7000AB9DA /* Base in Resources */,
 				9CB822812BBA8D0500F549A7 /* iPhone13.png in Resources */,
 				9CB822942BBA8D0500F549A7 /* MacSafeiPhoneFineWovenWallet.png in Resources */,
 				9CB8227E2BBA8D0500F549A7 /* MacStudio.png in Resources */,
 				9CB8227C2BBA8D0500F549A7 /* MacMini.png in Resources */,
 				9C252D9A2BBA4BF6000AB9DA /* Base in Resources */,
-				6B34512E2BBF934500B8CFCA /* MacPro.png in Resources */,
-				6B3451282BBF92F100B8CFCA /* Keyboard.png in Resources */,
+				6B3451282BBF92F100B8CFCA /* (null) in Resources */,
 				9CB822892BBA8D0500F549A7 /* iPad(9thGeneration).png in Resources */,
 				9CB8228A2BBA8D0500F549A7 /* iPad(10thGeneration).png in Resources */,
-				6B3451202BBF92BC00B8CFCA /* iPhone14.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +425,7 @@
 				9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */,
 				4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */,
 				9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */,
+				9C3A075E2BBF9DA300B89E82 /* MyPageCartTableViewCell.swift in Sources */,
 				9C99BB032BBEA50A00D3BC06 /* HomeCollectionViewCell.swift in Sources */,
 				610AE29B2BBEF8B100DCD7DE /* ListManager.swift in Sources */,
 				9C99BAFF2BBE38E500D3BC06 /* CallCenterViewController.swift in Sources */,
