@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static var cellName = "PriceCell"
+    static var contentName = "ProductCell"
 }
