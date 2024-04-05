@@ -110,12 +110,15 @@ class ModalViewController: UIViewController {
         
         tableView.reloadData()
         getData()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+
         getData()
     }
+
     
     func getData() {
         totalCount = ListManager.shared.list.map{$0.value}.reduce(0, +)
