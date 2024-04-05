@@ -50,14 +50,12 @@ class ViewController: UIViewController {
         numberFormatter.numberStyle = .decimal
         addDimmingView()
         setLabel()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         mainCollectionView.reloadData()
     }
-    
-    
+        
     func setLabel () {
         if ListManager.shared.list.count == 0 {
             notiLabel.isHidden = true
@@ -66,8 +64,7 @@ class ViewController: UIViewController {
             notiLabel.isHidden = false
         }
     }
-    
-    
+        
     func setupCollectionView() {
         let flowLayout = createFlowLayout()
         mainCollectionView.collectionViewLayout = flowLayout
@@ -128,12 +125,10 @@ class ViewController: UIViewController {
             self.dimmingView?.isHidden = true
             self.setLabel()
         }
-        
     }
     
     // MARK: - 장바구니 선택
     @IBAction func openCart(_ sender: UIButton) {
-        
         if !ListManager.shared.list.isEmpty {
             let modalVC = self.modalViewController
             // 사이드 메뉴 뷰 컨트롤러를 자식으로 추가하고 뷰 계층 구조에 추가.
@@ -141,7 +136,7 @@ class ViewController: UIViewController {
             self.view.addSubview(modalVC.view)
             
             let menuWidth = self.view.frame.width // 가로는 현재 화면과 동일하게
-            let menuHeight = self.view.frame.height * 0.3 // 높이만 30%로 설정
+            let menuHeight = self.view.frame.height * 0.4 // 높이만 40%로 설정
             
             // 사이드 메뉴의 시작 위치를 화면 아래로 설정.
             modalVC.view.frame = CGRect(x: 0, y: view.frame.height, width: menuWidth, height: menuHeight)
@@ -177,17 +172,9 @@ class ViewController: UIViewController {
 
 // MARK: - collectionView delegate, datasource 확장
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    // MARK: - 컬렉션 뷰 선택
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        ListManager.shared.list.append(filteredProducts[indexPath.item])
-                
-        if ListManager.shared.list.map({$0.name}).filter({$0 == filteredProducts[indexPath.item].name}).count == 2 {
-            let alert = UIAlertController(title: "중복 선택 확인", message: "중복으로 선택 되었습니다.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel))
-            ListManager.shared.list.removeLast()
-            
-            self.present(alert, animated: true)
-        }
-        setLabel()
+  
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -199,6 +186,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentName, for: indexPath) as! ProductCell
         let product = filteredProducts[indexPath.item]
         cell.configure(with: product)
+        
         if product.isNew {
             cell.newLabel.isHidden = false
             cell.newLabel.blink()
@@ -206,13 +194,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.newLabel.isHidden = true
         }
         
+        cell.cartDelegate = self //장바구니 추가버튼 이벤트 처리를 위한 대리자 지정
+        
         return cell
     }
 }
 
 // MARK: - SearchBar
 extension ViewController: UISearchBarDelegate {
-    
     // 입력 취소시
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
@@ -240,7 +229,6 @@ extension ViewController: UISearchBarDelegate {
 }
 
 // MARK: - 깜빡이는 효과를 주어 신상품을 강조.
-
 extension UIView {
     func blink() {
         self.alpha = 0.7;
@@ -254,5 +242,23 @@ extension UIView {
     func stopBlink() {
         layer.removeAllAnimations()
         alpha = 1
+    }
+}
+
+// MARK: - 장바구니 추가 이벤트를 처리할 Delegate 채택
+extension ViewController: AddToCartDelegate {
+    func addToCart(_ cell: ProductCell) {
+        guard let indexPath = mainCollectionView.indexPath(for: cell) else { return }
+        
+        ListManager.shared.list.append(filteredProducts[indexPath.item])
+        
+        if ListManager.shared.list.map({$0.name}).filter({$0 == filteredProducts[indexPath.item].name}).count == 2 {
+            let alert = UIAlertController(title: "중복 선택 확인", message: "중복으로 선택 되었습니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel))
+            ListManager.shared.list.removeLast()
+
+            self.present(alert, animated: true)
+        }
+        setLabel()
     }
 }
