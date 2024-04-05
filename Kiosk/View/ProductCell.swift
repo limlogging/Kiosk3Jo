@@ -123,6 +123,7 @@ class ProductCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     // MARK: - 컬렉션 뷰 데이터 할당
     func configure(with product: AppleProduct) {
         productImage.image = product.image
