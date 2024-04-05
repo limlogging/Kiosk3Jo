@@ -14,7 +14,7 @@ class HomeIntroduceView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 23)
         label.text = "스토어. 좋아하는 Fine Apple\n제품을 구입하는 가장 좋은 방법."
         label.textAlignment = .left
-        label.numberOfLines = 0 // 여러 줄에 걸쳐 표시되도록 설정
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,7 +33,6 @@ class HomeIntroduceView: UIView {
     private func setupSubviews() {
         addSubview(titleLabel)
         
-        // 제약 조건 설정
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
