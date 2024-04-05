@@ -7,6 +7,11 @@
 
 import UIKit
 
+// MARK: - 장바구니 추가 버튼을 위한 델리게이트 설정
+protocol AddToCartDelegate: AnyObject {
+    func addToCart(_ cell: ProductCell)
+}
+
 class ProductCell: UICollectionViewCell {
 // MARK: - code cell 구현
     // 이미지, 레이블 등을 포함할 컨테이너 뷰
@@ -51,8 +56,20 @@ class ProductCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    // MARK: - 장바구니 추가 버튼
+    private lazy var cartAddButton: UIButton = {
+        let button = UIButton()
+        button.setImage(.init(systemName: "cart.badge.plus"), for: .normal)
+        button.addTarget(self, action: #selector(addToCart(_: )), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    // 장바구니 추가 버튼 이벤트를 처리할 델리게이트 설정
+    var cartDelegate: AddToCartDelegate?
 
-// MARK: - autolayout 구현
+    // MARK: - autolayout 구현
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -61,6 +78,9 @@ class ProductCell: UICollectionViewCell {
         containerView.addSubview(productLabel)
         containerView.addSubview(productPrice)
         productImage.addSubview(newLabel)
+        
+        // MARK: - 카트버튼 추가
+        containerView.addSubview(cartAddButton)
         
         containerView.layer.masksToBounds = false
         containerView.layer.shadowColor = UIColor.black.cgColor
@@ -93,22 +113,33 @@ class ProductCell: UICollectionViewCell {
             
             newLabel.topAnchor.constraint(equalTo: productImage.topAnchor,constant: 5),
             newLabel.leadingAnchor.constraint(equalTo: productImage.leadingAnchor,constant: 5),
+            
+            cartAddButton.topAnchor.constraint(equalTo: productPrice.topAnchor),
+            cartAddButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5)
         ])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-// MARK: - 데이터 할당
+    
+    // MARK: - 컬렉션 뷰 데이터 할당
     func configure(with product: AppleProduct) {
         productImage.image = product.image
         productLabel.text = product.name
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
+        
         if let formattedPrice = numberFormatter.string(from: NSNumber(value: product.price)) {
             productPrice.text = formattedPrice
         } else {
             productPrice.text = "\(product.price)"
         }
+    }
+    
+    // MARK: - 장바구니 추가 버튼 구현 
+    @objc func addToCart(_ sender: UIButton) {
+        print("장바구니 추가 버튼 클릭 ^^ ")
+        cartDelegate?.addToCart(self)
     }
 }
