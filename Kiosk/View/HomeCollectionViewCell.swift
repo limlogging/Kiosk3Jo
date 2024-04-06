@@ -6,42 +6,6 @@
 import UIKit
 
 
-class HomeIntroduceView: UIView {
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 23)
-        label.text = "스토어. 좋아하는 Fine Apple\n제품을 구입하는 가장 좋은 방법."
-        label.textAlignment = .left
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupSubviews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    private func setupSubviews() {
-        addSubview(titleLabel)
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            titleLabel.widthAnchor.constraint(equalToConstant: 500),
-        ])
-    }
-}
-
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
@@ -80,11 +44,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
             
             homeImage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             homeImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            homeImage.widthAnchor.constraint(equalTo: containerView.widthAnchor, constant: -16),
-            homeImage.heightAnchor.constraint(equalTo: containerView.heightAnchor, constant: -16),
+            homeImage.widthAnchor.constraint(equalTo: containerView.widthAnchor, constant: 0),
+            homeImage.heightAnchor.constraint(equalTo: containerView.heightAnchor, constant: 0),
+            homeImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
+            homeImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 10)
         ])
     }
-    
     
     
     required init?(coder: NSCoder) {

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="rPG-Mt-R4C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="vB4-m8-pdz"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.circle" catalog="system" id="vB4-m8-pdz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igp-Vz-dzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,19 +94,21 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Fine Apple Store" id="pYG-Wn-4ux">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="fg6-SD-ZZa">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="fg6-SD-ZZa">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="gj9-Uh-EhF">
                                 <rect key="frame" x="323" y="4.6666666666666679" width="54" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="JYT-2B-TiF"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
                                 <connections>
                                     <action selector="openCart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S6n-mq-5cO"/>
                                 </connections>
                             </button>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -136,6 +139,58 @@
             </objects>
             <point key="canvasLocation" x="2827" y="-49"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="whr-ST-ovs">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" id="6Lj-pe-6xp" customClass="MapViewController" customModule="Kiosk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Coq-Oj-Nx4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-kX-xZU">
+                                <rect key="frame" x="16" y="592" width="361" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="c04-nS-954">
+                                <rect key="frame" x="20" y="68.999999999999972" width="360" height="503.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가까운 매장 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3A-yt-kFy">
+                                        <rect key="frame" x="124.33333333333334" y="0.0" width="111.66666666666666" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xha-1L-bbO">
+                                        <rect key="frame" x="0.0" y="23.333333333333314" width="360" height="480"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="480" id="7d7-rQ-LiH"/>
+                                            <constraint firstAttribute="width" constant="360" id="Pqb-vN-reN"/>
+                                        </constraints>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dq4-cB-gGD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c04-nS-954" firstAttribute="top" secondItem="dq4-cB-gGD" secondAttribute="top" constant="10" id="Cez-zr-s0B"/>
+                            <constraint firstItem="dq4-cB-gGD" firstAttribute="trailing" secondItem="c04-nS-954" secondAttribute="trailing" constant="20" id="fOL-9v-KKs"/>
+                            <constraint firstItem="c04-nS-954" firstAttribute="leading" secondItem="dq4-cB-gGD" secondAttribute="leading" constant="20" id="mSU-L9-UxW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="branchLabel" destination="Yyg-kX-xZU" id="b73-ej-o5I"/>
+                        <outlet property="mapView" destination="xha-1L-bbO" id="jgS-3h-hNF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYV-0U-7QB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866.4122137404579" y="-33.098591549295776"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HF3-C7-FYi">
             <objects>
@@ -145,6 +200,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="0TG-LC-Fm1" kind="relationship" relationship="viewControllers" id="0DG-NU-Kzp"/>
@@ -211,7 +268,7 @@
         <scene sceneID="6cz-R2-yXl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="alg-Ya-8jO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="상품" image="apple.logo" catalog="system" id="09X-CS-ViN"/>
+                    <tabBarItem key="tabBarItem" title="상품" image="archivebox" catalog="system" id="09X-CS-ViN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Br-1L-xSK">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -228,9 +285,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple.logo" catalog="system" width="105" height="128"/>
+        <image name="archivebox" catalog="system" width="128" height="107"/>
         <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.circle" catalog="system" width="128" height="123"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="phone.bubble" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">

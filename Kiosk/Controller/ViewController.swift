@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         notiLabel.layer.cornerRadius = notiLabel.frame.width/2
         
         searchBar.placeholder = "상품을 검색하세요."
+        searchBar.backgroundColor = .systemGray5
         searchBar.autocorrectionType = .no
         searchBar.spellCheckingType = .no
         
@@ -136,7 +137,7 @@ class ViewController: UIViewController {
             self.view.addSubview(modalVC.view)
             
             let menuWidth = self.view.frame.width // 가로는 현재 화면과 동일하게
-            let menuHeight = self.view.frame.height * 0.4 // 높이만 40%로 설정
+            let menuHeight = self.view.frame.height * 0.6 // 높이만 60%로 설정
             
             // 사이드 메뉴의 시작 위치를 화면 아래로 설정.
             modalVC.view.frame = CGRect(x: 0, y: view.frame.height, width: menuWidth, height: menuHeight)
@@ -162,8 +163,8 @@ class ViewController: UIViewController {
     func createFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 150, height: 100)
-        layout.estimatedItemSize = CGSize(width: 160, height: 200)
+        layout.itemSize = CGSize(width: 170, height: 100)
+        layout.estimatedItemSize = CGSize(width: 170, height: 200)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return layout
     }
