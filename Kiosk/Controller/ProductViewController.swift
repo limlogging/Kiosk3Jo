@@ -9,7 +9,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProductViewController: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var productSegment: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -171,7 +171,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - collectionView delegate, datasource 확장
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: - 컬렉션 뷰 선택하면 디테일 화면으로 이동
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -208,7 +208,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 // MARK: - SearchBar
-extension ViewController: UISearchBarDelegate {
+extension ProductViewController: UISearchBarDelegate {
     // 입력 취소시
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
@@ -253,7 +253,7 @@ extension UIView {
 }
 
 // MARK: - 장바구니 추가 이벤트를 처리할 Delegate 채택
-extension ViewController: AddToCartDelegate {
+extension ProductViewController: AddToCartDelegate {
     func addToCart(_ cell: ProductCell) {
         guard let indexPath = mainCollectionView.indexPath(for: cell) else { return }
         
