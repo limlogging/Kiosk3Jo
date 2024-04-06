@@ -174,11 +174,10 @@ class ProductViewController: UIViewController {
 extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: - 컬렉션 뷰 선택하면 디테일 화면으로 이동
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "detailViewID") as? DetailViewController {
-        
-            //detailVC.tempName = filteredProducts[indexPath.item].name
-            //detailVC.tempPrice = filteredProducts[indexPath.item].price
+            
+            detailVC.tempCategory = filteredProducts[indexPath.item].category   //카테고리명 전달
+            detailVC.tempProduct = filteredProducts //제품 정보 전달
             
             self.present(detailVC, animated: true, completion: nil)
         }
