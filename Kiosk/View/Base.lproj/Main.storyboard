@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -121,6 +122,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1985" y="-49"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="whr-ST-ovs">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" id="6Lj-pe-6xp" customClass="MapViewController" customModule="Kiosk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Coq-Oj-Nx4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-kX-xZU">
+                                <rect key="frame" x="16" y="592" width="361" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="c04-nS-954">
+                                <rect key="frame" x="20" y="68.999999999999972" width="360" height="503.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가까운 매장 찾기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3A-yt-kFy">
+                                        <rect key="frame" x="124.33333333333334" y="0.0" width="111.66666666666666" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xha-1L-bbO">
+                                        <rect key="frame" x="0.0" y="23.333333333333314" width="360" height="480"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="480" id="7d7-rQ-LiH"/>
+                                            <constraint firstAttribute="width" constant="360" id="Pqb-vN-reN"/>
+                                        </constraints>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dq4-cB-gGD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c04-nS-954" firstAttribute="top" secondItem="dq4-cB-gGD" secondAttribute="top" constant="10" id="Cez-zr-s0B"/>
+                            <constraint firstItem="dq4-cB-gGD" firstAttribute="trailing" secondItem="c04-nS-954" secondAttribute="trailing" constant="20" id="fOL-9v-KKs"/>
+                            <constraint firstItem="c04-nS-954" firstAttribute="leading" secondItem="dq4-cB-gGD" secondAttribute="leading" constant="20" id="mSU-L9-UxW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="branchLabel" destination="Yyg-kX-xZU" id="b73-ej-o5I"/>
+                        <outlet property="mapView" destination="xha-1L-bbO" id="jgS-3h-hNF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYV-0U-7QB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866.4122137404579" y="-33.098591549295776"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HF3-C7-FYi">

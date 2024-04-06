@@ -74,6 +74,16 @@ class CallCenterViewController: UIViewController {
 
 // MARK: - 테이블 뷰 델리게이트 , 데이터소스 확장
 extension CallCenterViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            if let mapVC = self.storyboard?.instantiateViewController(identifier: Constants.mapVC) as? MapViewController {
+                
+                self.present(mapVC, animated: true)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return callCenter.count
     }
