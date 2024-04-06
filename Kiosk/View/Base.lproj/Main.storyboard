@@ -114,11 +114,27 @@
                         <outlet property="notiLabel" destination="xWk-g8-ejk" id="klX-D9-DfE"/>
                         <outlet property="productSegment" destination="AKg-s5-1GB" id="P0p-4b-WMN"/>
                         <outlet property="searchBar" destination="Dgh-CH-Vfs" id="z98-WK-0cg"/>
+                        <segue destination="pJE-bW-lsL" kind="presentation" identifier="" id="ggB-S0-lP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1985" y="-49"/>
+            <point key="canvasLocation" x="2054" y="-49"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ixr-9J-Fkr">
+            <objects>
+                <viewController storyboardIdentifier="detailViewID" id="pJE-bW-lsL" customClass="DetailViewController" customModule="Kiosk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="72G-Iu-PhS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5Ry-QX-GVj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7li-6l-Xqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2827" y="-49"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HF3-C7-FYi">

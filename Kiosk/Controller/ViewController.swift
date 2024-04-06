@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     var modalViewController = ModalViewController()
     var dimmingView: UIView?
-   
+    
     
     // MARK: - viewDidLoad 설정
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         mainCollectionView.reloadData()
     }
-        
+    
     func setLabel () {
         if ListManager.shared.list.count == 0 {
             notiLabel.isHidden = true
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
             notiLabel.isHidden = false
         }
     }
-        
+    
     func setupCollectionView() {
         let flowLayout = createFlowLayout()
         mainCollectionView.collectionViewLayout = flowLayout
@@ -167,14 +167,20 @@ class ViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return layout
     }
-    
 }
 
 // MARK: - collectionView delegate, datasource 확장
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    // MARK: - 컬렉션 뷰 선택
+    // MARK: - 컬렉션 뷰 선택하면 디테일 화면으로 이동
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-  
+        
+        if let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "detailViewID") as? DetailViewController {
+        
+            detailVC.tempName = filteredProducts[indexPath.item].name
+            detailVC.tempPrice = filteredProducts[indexPath.item].price
+            
+            self.present(detailVC, animated: true, completion: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -220,7 +226,7 @@ extension ViewController: UISearchBarDelegate {
             filteredProducts = dataManager.products.filter { $0.category == "맥북" }
             mainCollectionView.reloadData()
             
-        // 타이핑 하고 있을때
+            // 타이핑 하고 있을때
         } else {
             filteredProducts = dataManager.products.filter{$0.name.contains(searchText)}
             mainCollectionView.reloadData()
@@ -256,7 +262,7 @@ extension ViewController: AddToCartDelegate {
             let alert = UIAlertController(title: "중복 선택 확인", message: "중복으로 선택 되었습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
             ListManager.shared.list.removeLast()
-
+            
             self.present(alert, animated: true)
         }
         setLabel()

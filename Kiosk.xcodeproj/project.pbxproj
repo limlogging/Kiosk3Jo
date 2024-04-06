@@ -40,6 +40,7 @@
 		9C3A07742BBFA40E00B89E82 /* MacPro.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07732BBFA40E00B89E82 /* MacPro.png */; };
 		9C3A07762BBFA41700B89E82 /* ProDisplayXDR.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C3A07752BBFA41700B89E82 /* ProDisplayXDR.png */; };
 		9C3A07782BBFCAA100B89E82 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A07772BBFCAA100B89E82 /* DetailViewController.swift */; };
+		9C3A077A2BC0017100B89E82 /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3A07792BC0017100B89E82 /* MyProfile.swift */; };
 		9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8558262BBC607E00375397 /* AppleProduct.swift */; };
 		9C85582D2BBC63C700375397 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85582C2BBC63C700375397 /* Constants.swift */; };
 		9C99BAFD2BBE38A500D3BC06 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */; };
@@ -107,6 +108,7 @@
 		9C3A07732BBFA40E00B89E82 /* MacPro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MacPro.png; sourceTree = "<group>"; };
 		9C3A07752BBFA41700B89E82 /* ProDisplayXDR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProDisplayXDR.png; sourceTree = "<group>"; };
 		9C3A07772BBFCAA100B89E82 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = "../../../../../../../.Trash/Kiosk3Jo 오전 11.38.15/Kiosk/Controller/DetailViewController.swift"; sourceTree = "<group>"; };
+		9C3A07792BC0017100B89E82 /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		9C8558262BBC607E00375397 /* AppleProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleProduct.swift; sourceTree = "<group>"; };
 		9C85582C2BBC63C700375397 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Model/Constants.swift; sourceTree = "<group>"; };
 		9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				4D196DCF2BBA85E100311CAF /* DataManager.swift */,
 				610AE2972BBEF59700DCD7DE /* HomeItem.swift */,
 				610AE29A2BBEF8B100DCD7DE /* ListManager.swift */,
+				9C3A07792BC0017100B89E82 /* MyProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				610AE2982BBEF59700DCD7DE /* HomeItem.swift in Sources */,
 				9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */,
 				4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */,
+				9C3A077A2BC0017100B89E82 /* MyProfile.swift in Sources */,
 				9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */,
 				9C3A075E2BBF9DA300B89E82 /* MyPageCartTableViewCell.swift in Sources */,
 				9C99BB032BBEA50A00D3BC06 /* HomeCollectionViewCell.swift in Sources */,

@@ -114,8 +114,8 @@ class ProductCell: UICollectionViewCell {
             newLabel.topAnchor.constraint(equalTo: productImage.topAnchor,constant: 5),
             newLabel.leadingAnchor.constraint(equalTo: productImage.leadingAnchor,constant: 5),
             
-            cartAddButton.topAnchor.constraint(equalTo: productPrice.topAnchor),
-            cartAddButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5)
+            cartAddButton.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 2),
+            cartAddButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10)
         ])
     }
     
@@ -139,7 +139,7 @@ class ProductCell: UICollectionViewCell {
     
     // MARK: - 장바구니 추가 버튼 구현 
     @objc func addToCart(_ sender: UIButton) {
-        print("장바구니 추가 버튼 클릭 ^^ ")
+        //print("장바구니 추가 버튼 클릭 ^^ ")
         cartDelegate?.addToCart(self)
     }
 }

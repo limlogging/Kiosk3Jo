@@ -9,14 +9,12 @@ import Foundation
 import UIKit
 
 struct AppleProduct {
-    
     let image: UIImage?
     let name: String
     let price: Int
     let category: String
     var value: Int 
     var isNew: Bool
-    
 }
 
 
@@ -26,4 +24,3 @@ struct Menu {
     let leftImage: String?
     let rightImage: String?
 }
-

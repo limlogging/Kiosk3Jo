@@ -44,7 +44,8 @@ class CallCenterTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-// MARK: - 테이블 뷰 오토 레이아웃
+    
+    // MARK: - 테이블 뷰 오토 레이아웃
     private func setupSubviews() {
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(leftImageView)
