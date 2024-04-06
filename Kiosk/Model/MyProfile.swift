@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 struct MyProfile {
     var name: String
     var email: String
+    var image: UIImage?
 }

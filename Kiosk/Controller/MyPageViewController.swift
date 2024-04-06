@@ -45,10 +45,6 @@ class MyPageViewController: UIViewController {
     }()
     var accountView: UIView = {
         let view = UIView()
-        //view.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        //view.layer.borderWidth = 1
-        //view.layer.cornerRadius = 5
-        //view.clipsToBounds = true
         view.backgroundColor = #colorLiteral(red: 0.960784018, green: 0.9607844949, blue: 0.9693934321, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -79,6 +75,7 @@ class MyPageViewController: UIViewController {
         return view
     }()
         
+    // MARK: - profile 뷰
     var profileView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.960784018, green: 0.9607844949, blue: 0.9693934321, alpha: 1)
@@ -86,23 +83,28 @@ class MyPageViewController: UIViewController {
         return view
     }()
     
+    // MARK: - profile 이미지
     var myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .systemPink
+        imageView.layer.cornerRadius = 50
+        imageView.clipsToBounds = true
         return imageView
     }()
-    
+        
+    // MARK: - profile 이름
     var myNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    var cartName: UILabel = {
+    // MARK: - profile 메일
+    var myEmail: UILabel = {
         let label = UILabel()
-        label.text = "장바구니"
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -114,7 +116,16 @@ class MyPageViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-        
+    
+    // MARK: - 장바구니
+    var cartName: UILabel = {
+        let label = UILabel()
+        label.text = "✨장바구니✨"
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - 테이블 뷰 추가
     var cartTableView: UITableView = {
         let tableView = UITableView()
@@ -128,10 +139,9 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
                 
         profileUI()
-        //print(ListManager.shared.list)
         
         cartTableView.dataSource = self
-        cartTableView.rowHeight = 100
+        cartTableView.rowHeight = 90
         // 셀 클래스 등록
         cartTableView.register(MyPageCartTableViewCell.self, forCellReuseIdentifier: "CartCellId")
         
@@ -145,9 +155,12 @@ class MyPageViewController: UIViewController {
         cartTableView.reloadData()
     }
     
+    // MARK: - 프로필 가져오기
     func getProfile() {
-        let myProfile = MyProfile(name: "애플", email: "apple@apple.com")
+        let myProfile = MyProfile(name: "애플", email: "apple@apple.com", image: UIImage(named: "myProfile"))
         myNameLabel.text = myProfile.name + " 님, 안녕하세요."
+        myImageView.image = myProfile.image
+        myEmail.text = myProfile.email
     }
     
     func profileUI() {
@@ -166,9 +179,10 @@ class MyPageViewController: UIViewController {
         view.addSubview(profileView)
         view.addSubview(myImageView)
         view.addSubview(myNameLabel)
+        view.addSubview(myEmail)
         //장바구니
-        view.addSubview(cartName)
         view.addSubview(cartListView)
+        view.addSubview(cartName)
         view.addSubview(cartTableView)
         
         NSLayoutConstraint.activate([
@@ -210,18 +224,29 @@ class MyPageViewController: UIViewController {
             profileView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             profileView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             profileView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            //사진
+            myImageView.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 10),
+            myImageView.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 10),
+            myImageView.bottomAnchor.constraint(equalTo: profileView.bottomAnchor, constant: -10),
+            myImageView.widthAnchor.constraint(equalToConstant: 100),
+            //이름
+            myNameLabel.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 40),
+            myNameLabel.leadingAnchor.constraint(equalTo: myImageView.trailingAnchor, constant: 10),
+            //이메일
+            myEmail.topAnchor.constraint(equalTo: myNameLabel.bottomAnchor, constant: 5),
+            myEmail.leadingAnchor.constraint(equalTo: myImageView.trailingAnchor, constant: 10),
             
-            myNameLabel.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 10),
-            myNameLabel.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 10),
-            
-            //장바구니
-            cartName.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: view.bounds.height * 0.01),
-            cartName.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            cartListView.topAnchor.constraint(equalTo: cartName.bottomAnchor, constant: 2),
+            //장바구니 뷰
+            cartListView.topAnchor.constraint(equalTo: profileView.bottomAnchor),
             cartListView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             cartListView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             cartListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            cartTableView.topAnchor.constraint(equalTo: cartListView.topAnchor, constant: 10),
+            //장바구니 타이틀
+            cartName.topAnchor.constraint(equalTo: cartListView.topAnchor, constant: 10),
+            cartName.leadingAnchor.constraint(equalTo: cartListView.leadingAnchor, constant: 10),
+            cartName.trailingAnchor.constraint(equalTo: cartListView.trailingAnchor, constant: -10),
+            //장바구니 테이블뷰
+            cartTableView.topAnchor.constraint(equalTo: cartName.bottomAnchor, constant: 10),
             cartTableView.leadingAnchor.constraint(equalTo: cartListView.leadingAnchor, constant: 10),
             cartTableView.trailingAnchor.constraint(equalTo: cartListView.trailingAnchor, constant: -10),
             cartTableView.bottomAnchor.constraint(equalTo: cartListView.bottomAnchor, constant: -10)
@@ -231,7 +256,6 @@ class MyPageViewController: UIViewController {
 
 extension MyPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("ListManager.shared.list.count: \(ListManager.shared.list.count)")
         return ListManager.shared.list.count
     }
     
@@ -249,13 +273,7 @@ extension MyPageViewController: UITableViewDataSource {
         }
         //cell?.productPrice.text = String(ListManager.shared.list[indexPath.row].price) + "원"
         cell?.productValue.text = String(ListManager.shared.list[indexPath.row].value) + "개"
-        
-        
-        
-
-        
-        //print(ListManager.shared.list)
-        
+ 
         return cell ?? UITableViewCell()
     }
 }
