@@ -9,15 +9,10 @@ import Foundation
 import UIKit
 
 struct AppleProduct {
-    
     let image: UIImage?
     let name: String
     let price: Int
     let category: String
     var value: Int 
     var isNew: Bool
-    
 }
-
-
-

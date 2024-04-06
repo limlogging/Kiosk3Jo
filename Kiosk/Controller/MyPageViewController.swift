@@ -79,16 +79,21 @@ class MyPageViewController: UIViewController {
         return view
     }()
         
-    var nameView: UIView = {
+    var profileView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.960784018, green: 0.9607844949, blue: 0.9693934321, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    var myImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     var myNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "안녕하세요"
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -118,43 +123,7 @@ class MyPageViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-        
-    //-------------------------------------------------------------//
-    
-    var profileView: UIView = {
-        let view = UIView()
-        view.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        view.layer.borderWidth = 1
-        view.layer.cornerRadius = 5
-        view.clipsToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    var profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .systemPink
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    lazy var profileImageChangeButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("사진변경", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 1
-        button.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        button.addTarget(self, action: #selector(changeImage(_:)), for: .touchUpInside)
-        return button
-    }()
-    
-    let imagePicker: UIImagePickerController! = UIImagePickerController()
-    var captureImage: UIImage!
-    var videoURL: URL!
-    var flagImageSave = false
-    
+                
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -165,6 +134,8 @@ class MyPageViewController: UIViewController {
         cartTableView.rowHeight = 100
         // 셀 클래스 등록
         cartTableView.register(MyPageCartTableViewCell.self, forCellReuseIdentifier: "CartCellId")
+        
+        getProfile()
     }
     
     // MARK: - 테이블 뷰 새로고침
@@ -174,44 +145,26 @@ class MyPageViewController: UIViewController {
         cartTableView.reloadData()
     }
     
-    @objc func changeImage(_ sender: UIButton) {
-        if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
-            flagImageSave = false
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.mediaTypes = ["public.image"]
-            imagePicker.allowsEditing = true
-            
-            present(imagePicker, animated: true, completion: nil)
-        }
-        else {
-            myAlert("사진 앨범에 접근 할 수 없음", message: "애플리케이션이 사진 앨범에 접근할 수 없습니다. ")
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func myAlert(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+    func getProfile() {
+        let myProfile = MyProfile(name: "애플", email: "apple@apple.com")
+        myNameLabel.text = myProfile.name + " 님, 안녕하세요."
     }
     
     func profileUI() {
+        //top
         view.addSubview(topView)
         view.addSubview(topLogo)
         view.addSubview(topSearch)
         view.addSubview(topBag)
         view.addSubview(topEqual)
+        //계정
         view.addSubview(accountView)
         view.addSubview(accountLabel)
         view.addSubview(accountLoginStatusLabel)
         view.addSubview(lineView)
-        view.addSubview(nameView)
+        //프로필
+        view.addSubview(profileView)
+        view.addSubview(myImageView)
         view.addSubview(myNameLabel)
         //장바구니
         view.addSubview(cartName)
@@ -253,16 +206,16 @@ class MyPageViewController: UIViewController {
             lineView.heightAnchor.constraint(equalToConstant: 1),
             
             //회원정보
-            nameView.topAnchor.constraint(equalTo: lineView.bottomAnchor),
-            nameView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            nameView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            nameView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
+            profileView.topAnchor.constraint(equalTo: lineView.bottomAnchor),
+            profileView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            profileView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            profileView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.15),
             
-            myNameLabel.topAnchor.constraint(equalTo: nameView.topAnchor, constant: 10),
-            myNameLabel.leadingAnchor.constraint(equalTo: nameView.leadingAnchor, constant: 10),
+            myNameLabel.topAnchor.constraint(equalTo: profileView.topAnchor, constant: 10),
+            myNameLabel.leadingAnchor.constraint(equalTo: profileView.leadingAnchor, constant: 10),
             
             //장바구니
-            cartName.topAnchor.constraint(equalTo: nameView.bottomAnchor, constant: view.bounds.height * 0.01),
+            cartName.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: view.bounds.height * 0.01),
             cartName.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             cartListView.topAnchor.constraint(equalTo: cartName.bottomAnchor, constant: 2),
             cartListView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -273,35 +226,6 @@ class MyPageViewController: UIViewController {
             cartTableView.trailingAnchor.constraint(equalTo: cartListView.trailingAnchor, constant: -10),
             cartTableView.bottomAnchor.constraint(equalTo: cartListView.bottomAnchor, constant: -10)
         ])
-    }
-}
-
-extension MyPageViewController: UINavigationControllerDelegate {
-    
-}
-extension MyPageViewController: UIImagePickerControllerDelegate {
-    // MARK: - 사진 선택
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
-
-        if mediaType.isEqual(to: "public.image" as String) {
-            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-
-            if flagImageSave {
-                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
-            }
-
-            profileImageView.image = captureImage
-        }
-        else if mediaType.isEqual(to: "public.movie" as String) {
-            if flagImageSave {
-                videoURL = (info[UIImagePickerController.InfoKey.mediaURL] as! URL)
-
-                UISaveVideoAtPathToSavedPhotosAlbum(videoURL.relativePath, self, nil, nil)
-            }
-        }
-
-        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -316,10 +240,21 @@ extension MyPageViewController: UITableViewDataSource {
         
         cell?.productImage.image = ListManager.shared.list[indexPath.row].image
         cell?.productName.text = ListManager.shared.list[indexPath.row].name
-        cell?.productPrice.text = String(ListManager.shared.list[indexPath.row].price) + "원"
+        
+        //자리수 구분 추가
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        if let formattedPrice = numberFormatter.string(from: NSNumber(value: ListManager.shared.list[indexPath.row].price)) {
+            cell?.productPrice.text = formattedPrice + "원"
+        }
+        //cell?.productPrice.text = String(ListManager.shared.list[indexPath.row].price) + "원"
         cell?.productValue.text = String(ListManager.shared.list[indexPath.row].value) + "개"
         
-        print(ListManager.shared.list)
+        
+        
+
+        
+        //print(ListManager.shared.list)
         
         return cell ?? UITableViewCell()
     }
