@@ -177,8 +177,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         if let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "detailViewID") as? DetailViewController {
         
-            detailVC.tempName = filteredProducts[indexPath.item].name
-            detailVC.tempPrice = filteredProducts[indexPath.item].price
+            //detailVC.tempName = filteredProducts[indexPath.item].name
+            //detailVC.tempPrice = filteredProducts[indexPath.item].price
             
             self.present(detailVC, animated: true, completion: nil)
         }
