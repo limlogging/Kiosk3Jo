@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  Kiosk
 //
-//  Created by Dongik Song on 4/5/24.
+//  Created by imhs on 4/5/24.
 //
 
 import UIKit

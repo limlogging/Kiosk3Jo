@@ -10,7 +10,7 @@ import UIKit
 class CallCenterViewController: UIViewController {
     
     private let tableView = UITableView()
-    var callCenter: [Menu] = []
+    var callCenter: [CallCenterMenu] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +25,13 @@ class CallCenterViewController: UIViewController {
 // MARK: - 셀 내 데이터
     func setupData() {
         callCenter = [
-            Menu(title: "매장찾기", leftImage: "location.magnifyingglass", rightImage: "greaterthan.circle"),
-            Menu(title: "마이 페이지", leftImage: "person.circle", rightImage: "greaterthan.circle"),
-            Menu(title: "이용 약관", leftImage: "list.bullet.rectangle", rightImage: "greaterthan.circle"),
-            Menu(title: "개인정보 처리 방침", leftImage: "list.bullet.rectangle", rightImage: "greaterthan.circle"),
-            Menu(title: "고객문의", leftImage: "phone.fill", rightImage: "greaterthan.circle"),
-            Menu(title: "자주 묻는 질문", leftImage: "tray.2.fill", rightImage: "greaterthan.circle"),
-            Menu(title: "국가/언어 변경", leftImage: "globe.asia.australia.fill", rightImage: "greaterthan.circle")
+            CallCenterMenu(title: "매장찾기", leftImage: "location.magnifyingglass", rightImage: "greaterthan.circle"),
+            CallCenterMenu(title: "마이 페이지", leftImage: "person.circle", rightImage: "greaterthan.circle"),
+            CallCenterMenu(title: "이용 약관", leftImage: "list.bullet.rectangle", rightImage: "greaterthan.circle"),
+            CallCenterMenu(title: "개인정보 처리 방침", leftImage: "list.bullet.rectangle", rightImage: "greaterthan.circle"),
+            CallCenterMenu(title: "고객문의", leftImage: "phone.fill", rightImage: "greaterthan.circle"),
+            CallCenterMenu(title: "자주 묻는 질문", leftImage: "tray.2.fill", rightImage: "greaterthan.circle"),
+            CallCenterMenu(title: "국가/언어 변경", leftImage: "globe.asia.australia.fill", rightImage: "greaterthan.circle")
         ]
         tableView.reloadData()
     }

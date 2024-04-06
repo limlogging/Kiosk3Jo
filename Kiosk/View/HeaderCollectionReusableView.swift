@@ -13,7 +13,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     private let label: UILabel = {
        let label = UILabel()
-        label.text = "최신 제품. 따끈따끈한 신제품 이야기"
+        label.text = "최신 제품. 이곳에서 쇼핑하는 이유"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = .left
         label.textColor = .black

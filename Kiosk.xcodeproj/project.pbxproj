@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DCF2BBA85E100311CAF /* DataManager.swift */; };
+		4D196DD02BBA85E100311CAF /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DCF2BBA85E100311CAF /* HomeDataManager.swift */; };
 		4D196DD62BBA9CCE00311CAF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D196DD52BBA9CCE00311CAF /* ProductCell.swift */; };
 		4D89ACE32BBED2420073452E /* CallCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89ACE22BBED2420073452E /* CallCenterTableViewCell.swift */; };
+		4D8A7EFA2BBFCED300D9332A /* MyPageCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A7EF92BBFCED300D9332A /* MyPageCartTableViewCell.swift */; };
+		4D8A7EFC2BBFCF0500D9332A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A7EFB2BBFCF0500D9332A /* DetailViewController.swift */; };
+		4D8A7EFE2BC031A200D9332A /* CallCenterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8A7EFD2BC031A200D9332A /* CallCenterMenu.swift */; };
 		610AE2932BBEB31D00DCD7DE /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610AE2912BBEB31D00DCD7DE /* PriceCell.swift */; };
 		610AE2942BBEB31D00DCD7DE /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 610AE2922BBEB31D00DCD7DE /* PriceCell.xib */; };
 		610AE2982BBEF59700DCD7DE /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610AE2972BBEF59700DCD7DE /* HomeItem.swift */; };
@@ -76,9 +79,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D196DCF2BBA85E100311CAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		4D196DCF2BBA85E100311CAF /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		4D196DD52BBA9CCE00311CAF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		4D89ACE22BBED2420073452E /* CallCenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenterTableViewCell.swift; sourceTree = "<group>"; };
+		4D8A7EF92BBFCED300D9332A /* MyPageCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageCartTableViewCell.swift; sourceTree = "<group>"; };
+		4D8A7EFB2BBFCF0500D9332A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4D8A7EFD2BC031A200D9332A /* CallCenterMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenterMenu.swift; sourceTree = "<group>"; };
 		610AE2912BBEB31D00DCD7DE /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
 		610AE2922BBEB31D00DCD7DE /* PriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
 		610AE2972BBEF59700DCD7DE /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
@@ -158,7 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				9C8558262BBC607E00375397 /* AppleProduct.swift */,
-				4D196DCF2BBA85E100311CAF /* DataManager.swift */,
+				4D8A7EFD2BC031A200D9332A /* CallCenterMenu.swift */,
+				4D196DCF2BBA85E100311CAF /* HomeDataManager.swift */,
 				610AE2972BBEF59700DCD7DE /* HomeItem.swift */,
 				610AE29A2BBEF8B100DCD7DE /* ListManager.swift */,
 			);
@@ -175,7 +182,7 @@
 				9C99BB002BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift */,
 				9C99BB012BBEA50A00D3BC06 /* HomeCollectionViewCell.swift */,
 				4D89ACE22BBED2420073452E /* CallCenterTableViewCell.swift */,
-				61B134C72BBFCE8500FBAE9D /* MyPageCartTableViewCell.swift */,
+				4D8A7EF92BBFCED300D9332A /* MyPageCartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,7 +195,7 @@
 				9C99BB042BBEA51D00D3BC06 /* HomeViewController.swift */,
 				9C99BAFC2BBE38A500D3BC06 /* MyPageViewController.swift */,
 				9C99BAFE2BBE38E500D3BC06 /* CallCenterViewController.swift */,
-				61B134C92BBFCEAB00FBAE9D /* DetailViewController.swift */,
+				4D8A7EFB2BBFCF0500D9332A /* DetailViewController.swift */,
 				61B134CB2BBFDCAC00FBAE9D /* MapViewController.swift */,
 			);
 			path = Controller;
@@ -429,12 +436,13 @@
 				9C99BB022BBEA50A00D3BC06 /* HeaderCollectionReusableView.swift in Sources */,
 				610AE2982BBEF59700DCD7DE /* HomeItem.swift in Sources */,
 				9C252D972BBA4BF6000AB9DA /* ViewController.swift in Sources */,
-				4D196DD02BBA85E100311CAF /* DataManager.swift in Sources */,
+				4D196DD02BBA85E100311CAF /* HomeDataManager.swift in Sources */,
+				4D8A7EFA2BBFCED300D9332A /* MyPageCartTableViewCell.swift in Sources */,
 				9C8558272BBC607E00375397 /* AppleProduct.swift in Sources */,
 				9C99BB032BBEA50A00D3BC06 /* HomeCollectionViewCell.swift in Sources */,
-				61B134CA2BBFCEAB00FBAE9D /* DetailViewController.swift in Sources */,
+				4D8A7EFC2BBFCF0500D9332A /* DetailViewController.swift in Sources */,
 				610AE29B2BBEF8B100DCD7DE /* ListManager.swift in Sources */,
-				61B134C82BBFCE8500FBAE9D /* MyPageCartTableViewCell.swift in Sources */,
+				4D8A7EFE2BC031A200D9332A /* CallCenterMenu.swift in Sources */,
 				9C99BAFF2BBE38E500D3BC06 /* CallCenterViewController.swift in Sources */,
 				9C252D932BBA4BF6000AB9DA /* AppDelegate.swift in Sources */,
 				4D89ACE32BBED2420073452E /* CallCenterTableViewCell.swift in Sources */,
