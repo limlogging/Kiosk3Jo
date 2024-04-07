@@ -1,12 +1,16 @@
 # Table of Contents
 1. [Description](#description)
-2. [Demo](#Demo)
-3. [Main Feature](#main-feature)
-4. [Stacks](#stacks)
-5. [Project Structure](#project-structure)
-6. [Developer](#developer)
+2. [Period](#period)
+3. [Demo](#Demo)
+4. [Main Feature](#main-feature)
+5. [Requirements](#requirements)
+6. [Stacks](#stacks)
+7. [Project Structure](#project-structure)
+8. [Developer](#developer)
 
 # 🍍Fine Apple Store🍍
+
+<img src="https://i.ibb.co/s5rg8Y5/image-removebg-preview.png" alt="image-removebg-preview" width="300">
 
 Apple 제품을 빠르고 간편하게 쇼핑하자! Fine Apple Store!
 
@@ -15,6 +19,40 @@ Apple 제품을 빠르고 간편하게 쇼핑하자! Fine Apple Store!
 Apple 제품에대한 소식을 빠르게, 편하게, 싸게 구입 할 수 있는 Fine Apple Store입니다.
 
 새로나온 제품은 물론 제품 정보도 한눈에 간편하게!
+
+## Period
+
+- 24.04.01
+    - Project 아이디어 회의 및 기본 기능 구현
+        - 상품 표시, 담은 물품 표시
+
+- 24.04.02
+    - 각종 버튼 기능 구현 (주문하기, 문의하기, 주문취소)
+    - 추가 기능 회의
+
+- 24.04.03
+    - 기존 UI 디자인 변경 및 추가 기능 구현
+        - TabBar 추가 (홈, 상품, 마이페이지, 고객센터로 세분화)
+        - Modal View로 장바구니 화면 별도 구현
+        - Notification Badge형식 구현
+        - App Icon 등록
+
+- 24.04.04
+    - 홈 화면 기능 및 디자인
+    - 고객센터 페이지 구현
+    - 상품페이지 SearchBar 기능 구현
+
+- 24.04.05
+    - 고객센터 내 매장찾기 기능 추가 (지도구현)
+    - 마이페이지 구현
+    - 새로 출시된 제품 구분 기능 추가
+
+- 24.04.06
+    - 제품 상세페이지 기능 구현
+    - Launch Screnn 화면 디자인
+
+- 24.04.07
+    - UI 점검 및 기능 최종 점검 
 
 ## Demo
 <p float="left">
@@ -34,7 +72,7 @@ Apple 제품에대한 소식을 빠르게, 편하게, 싸게 구입 할 수 있�
 
 ## Main Feature
 ### 간편한 주문
-- 간단하게 스크롤로 나의 Repository들을 볼 수 있는 기능
+- 터치 한번으로 주문도 한번에!
 
 ### 상품검색도 한번에
 - 상품이 어디있는지 헤메지말고 검색으로 한번에 찾자
@@ -53,6 +91,9 @@ Apple 제품에대한 소식을 빠르게, 편하게, 싸게 구입 할 수 있�
 
 ### 매장 찾기
 - 간편하게 지도로 매장 위치도 한번에
+
+## Requirements
+- App requires **iOS 15 or above**
 
 ## Stacks
 - **Environment**
@@ -103,6 +144,22 @@ Fine Apple Store Kiosk
 
 ## Developer
 *  **임형섭** ([limlogging](https://github.com/limlogging))
+    - merge 담당
+    - TabBar, Navigation 기능
+    - 마이페이지 구현
+    - 제품 상세 페이지 구현
 *  **금세미** ([pond1225](https://github.com/pond1225))
+    - 버튼 , 알럿 기능 구현
+    - 컬렉션 뷰와 이미지 연결
+    - launch screen 디자인
 *  **김시종** ([SijongKim93](https://github.com/SijongKim93))
+    - 데이터 모델링
+    - 상품 컬렉션뷰, 세그먼트컨트롤러 기능 구현
+    - 홈 탭 고객센터 탭 구현
+    - 이미지 및 레이아웃 상세 디자인 수정
 *  **송동익** ([Haroldfromk](https://github.com/Haroldfromk/))
+    - 테이블 뷰 기능 구현
+    - 장바구니 기능, Modal View 구현
+    - Notification Badge 구현, Search Bar 구현
+    - 매장 위치 지도 기능 구현
+    - 그 외 기타 에러 해결
