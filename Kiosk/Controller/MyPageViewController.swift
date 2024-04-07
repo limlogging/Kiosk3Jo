@@ -134,25 +134,7 @@ class MyPageViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    
-    // MARK: - 가격
-    private lazy var priceLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    // MARK: - 수량
-    private lazy var countLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    // MARK: - 총 수량, 가격
-    var totalCount = 0
-    var totalPrice = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -164,7 +146,6 @@ class MyPageViewController: UIViewController {
         cartTableView.register(MyPageCartTableViewCell.self, forCellReuseIdentifier: Constants.cartCell)
         
         getProfile()
-        getData()
     }
     
     // MARK: - 테이블 뷰 새로고침
@@ -181,16 +162,7 @@ class MyPageViewController: UIViewController {
         myImageView.image = myProfile.image
         myEmail.text = myProfile.email
     }
-    
-    // MARK: - 총 수량, 가격
-    func getData() {
-        totalCount = ListManager.shared.list.map{$0.value}.reduce(0, +)
-        totalPrice = ListManager.shared.list.map{$0.value * $0.price}.reduce(0, +)
-//        priceLabel.text = "\(numberFormatter.string(from: totalPrice as NSNumber) ?? "0") 원"
-//        countLabel.text = "\(String(totalCount)) 개"
-        print("totalCount: \(totalCount), totalPrice: \(totalPrice)")
-    }
-    
+
     func profileUI() {
         //top
         view.addSubview(topView)
@@ -210,7 +182,6 @@ class MyPageViewController: UIViewController {
         view.addSubview(myEmail)
         //장바구니
         view.addSubview(cartListView)
-        view.addSubview(priceLabel)
         view.addSubview(cartName)
         view.addSubview(cartTableView)
         
@@ -293,7 +264,7 @@ extension MyPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cartCell, for: indexPath) as? MyPageCartTableViewCell
         
-        cell?.selectionStyle = .none //내가 선택한 cell 숨기기 
+        cell?.selectionStyle = .none //내가 선택한 cell 숨기기
         
         cell?.productImage.image = ListManager.shared.list[indexPath.row].image
         cell?.productName.text = ListManager.shared.list[indexPath.row].name
