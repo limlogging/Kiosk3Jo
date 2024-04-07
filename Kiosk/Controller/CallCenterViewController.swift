@@ -54,7 +54,7 @@ class CallCenterViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 85
-        tableView.register(CallCenterTableViewCell.self, forCellReuseIdentifier: "CallCenterCell")
+        tableView.register(CallCenterTableViewCell.self, forCellReuseIdentifier: Constants.callCell)
     }
 
     
@@ -79,7 +79,7 @@ extension CallCenterViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             if let mapVC = self.storyboard?.instantiateViewController(identifier: Constants.mapVC) as? MapViewController {
                 
-                self.present(mapVC, animated: true)
+                self.navigationController?.pushViewController(mapVC, animated: true)
             }
         }
     }
@@ -89,7 +89,7 @@ extension CallCenterViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CallCenterCell", for: indexPath) as! CallCenterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.callCell, for: indexPath) as! CallCenterTableViewCell
         let menu = callCenter[indexPath.row]
         cell.selectionStyle = .none
         
