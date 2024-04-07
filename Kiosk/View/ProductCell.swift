@@ -43,7 +43,7 @@ class ProductCell: UICollectionViewCell {
     // 제품 가격 레이블
     let productPrice: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -60,10 +60,10 @@ class ProductCell: UICollectionViewCell {
     // MARK: - 장바구니 추가 버튼
     private lazy var cartAddButton: UIButton = {
         let button = UIButton()
-        button.setImage(.init(systemName: "archivebox.fill"), for: .normal)
+        button.setImage(.init(systemName: "cart.badge.plus"), for: .normal)
         button.addTarget(self, action: #selector(addToCart(_: )), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .black
+//        button.tintColor = .blue
         return button
     }()
     
@@ -133,9 +133,9 @@ class ProductCell: UICollectionViewCell {
         numberFormatter.numberStyle = .decimal
         
         if let formattedPrice = numberFormatter.string(from: NSNumber(value: product.price)) {
-            productPrice.text = formattedPrice
+            productPrice.text = ("\(formattedPrice)원")
         } else {
-            productPrice.text = "\(product.price)"
+            productPrice.text = "\(product.price)원"
         }
     }
     

@@ -12,7 +12,7 @@ class DataManager {
     
     init() {
         let macBook = [
-            AppleProduct(image: UIImage(named: "MacBookAir13(M2)"), name: "MacBook Air13(M2)", price: 1390000, category: "맥북", value: 1, isNew: false),
+            AppleProduct(image: UIImage(named: "MacBookAir13(M2)"), name: "MacBook Air13(M2)", price: 1390000, category: "맥북", value: 1, isNew: true),
             AppleProduct(image: UIImage(named: "MacBookAir13(M2)"), name: "MacBook Air13(M3)", price: 1590000, category: "맥북", value: 1, isNew: true),
             AppleProduct(image: UIImage(named: "MacBookAir15(M3)"), name: "MacBook Air15(M3)", price: 1890000, category: "맥북", value: 1, isNew: true),
             AppleProduct(image: UIImage(named: "MacBookPro14"), name: "MacBook Pro14", price: 2390000, category: "맥북", value: 1, isNew: false),
@@ -38,7 +38,7 @@ class DataManager {
         
         let iPad = [
             AppleProduct(image: UIImage(named: "iPadPro11"), name: "iPad Pro 11", price: 1249000, category: "패드", value: 1, isNew: false),
-            AppleProduct(image: UIImage(named: "iPadPro12.9"), name: "iPad Pro 12.9", price: 1729000, category: "패드", value: 1, isNew: true),
+            AppleProduct(image: UIImage(named: "iPadPro12.9"), name: "iPad Pro 12.9", price: 1729000, category: "패드", value: 1, isNew: false),
             AppleProduct(image: UIImage(named: "iPadAir"), name: "iPad Air", price: 929000, category: "패드", value: 1, isNew: false),
             AppleProduct(image: UIImage(named: "iPad(10thGeneration)"), name: "iPad(10세대)", price: 679000, category: "패드", value: 1, isNew: false),
             AppleProduct(image: UIImage(named: "iPad(9thGeneration)"), name: "iPad(9세대)", price: 499000, category: "패드", value: 1, isNew: false),
