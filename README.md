@@ -63,7 +63,7 @@ Apple 제품에대한 소식을 빠르게, 편하게, 싸게 구입 할 수 있�
 
     <img src="https://img.shields.io/badge/-swift-F05138?style=flat&logo=swift&logoColor=white"/> 
 
-- **Collaboration Tool**
+- **Communication**
 
     <img src="https://img.shields.io/badge/-slack-4A154B?style=flat&logo=slack&logoColor=white"/> <img src="https://img.shields.io/badge/-notion-000000?style=flat&logo=notion&logoColor=white"/> 
 
