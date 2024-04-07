@@ -9,7 +9,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
     
     let topView: UIView = {
         let view = UIView()
-        //view.backgroundColor = .gray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -55,7 +54,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
     
     
     
-    let cellIdentifier = "HomeCollectionViewCell"
     var collectionView: UICollectionView!
     var data = HomeDataManager.generateDummyData()
     
@@ -131,8 +129,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
-        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
+        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: Constants.homeCell)
+        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constants.headerIdentifier)
         
         view.addSubview(collectionView)
         
@@ -151,14 +149,18 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as! HomeCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         let item = data[indexPath.item]
         cell.homeImage.image = item.image
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Constants.headerIdentifier, for: indexPath) as? HeaderCollectionReusableView else {
+            return UICollectionReusableView()
+        }
         header.configure()
         return header
     }

@@ -8,7 +8,13 @@
 import Foundation
 
 struct Constants {
-    static var cellName = "PriceCell"
-    static var contentName = "ProductCell"
-    static var mapVC = "MapVC"
+    
+    static let priceCell = "PriceCell"
+    static let contentName = "ProductCell"
+    static let mapVC = "MapVC"
+    static let cartCell = "CartCellId"
+    static let homeCell = "HomeCollectionViewCell"
+    static let headerIdentifier = "HeaderCollectionReusableView"
+    static let callCell = "CallCenterCell"
+    
 }

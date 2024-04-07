@@ -13,7 +13,7 @@ class ModalViewController: UIViewController {
     private lazy var tableView : UITableView = {
         var table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.register(UINib(nibName: Constants.cellName, bundle: nil), forCellReuseIdentifier: Constants.cellName)
+        table.register(UINib(nibName: Constants.priceCell, bundle: nil), forCellReuseIdentifier: Constants.priceCell)
         
         return table
     }()
@@ -21,7 +21,6 @@ class ModalViewController: UIViewController {
     // MARK: - 가격
     private lazy var priceLabel: UILabel = {
         let label = UILabel()
-        //label.backgroundColor = .blue
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         
@@ -149,7 +148,6 @@ class ModalViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             tableView.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10),
-            //tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
             tableView.bottomAnchor.constraint(equalTo: buttonView.topAnchor, constant: -10)
         ]
         let buttonViewConstraints = [
@@ -257,7 +255,8 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
         
         let currentLocation = indexPath.row
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as? PriceCell else { return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.priceCell, for: indexPath) as? PriceCell else { 
+            return UITableViewCell()
         }
         
         cell.selectionStyle = .none

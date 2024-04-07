@@ -143,7 +143,7 @@ class MyPageViewController: UIViewController {
         cartTableView.dataSource = self
         cartTableView.rowHeight = 90
         // 셀 클래스 등록
-        cartTableView.register(MyPageCartTableViewCell.self, forCellReuseIdentifier: "CartCellId")
+        cartTableView.register(MyPageCartTableViewCell.self, forCellReuseIdentifier: Constants.cartCell)
         
         getProfile()
     }
@@ -262,7 +262,7 @@ extension MyPageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CartCellId", for: indexPath) as? MyPageCartTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cartCell, for: indexPath) as? MyPageCartTableViewCell
         
         cell?.productImage.image = ListManager.shared.list[indexPath.row].image
         cell?.productName.text = ListManager.shared.list[indexPath.row].name
@@ -273,7 +273,6 @@ extension MyPageViewController: UITableViewDataSource {
         if let formattedPrice = numberFormatter.string(from: NSNumber(value: ListManager.shared.list[indexPath.row].price)) {
             cell?.productPrice.text = formattedPrice + "원"
         }
-        //cell?.productPrice.text = String(ListManager.shared.list[indexPath.row].price) + "원"
         cell?.productValue.text = String(ListManager.shared.list[indexPath.row].value) + "개"
  
         return cell ?? UITableViewCell()
