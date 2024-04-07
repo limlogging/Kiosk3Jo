@@ -11,7 +11,7 @@ import MobileCoreServices
 class MyPageViewController: UIViewController {
     var topView: UIView = {
         let view = UIView()
-        //view.backgroundColor = .gray
+        view.backgroundColor = #colorLiteral(red: 0.960784018, green: 0.9607844949, blue: 0.9693934321, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -96,7 +96,7 @@ class MyPageViewController: UIViewController {
     // MARK: - profile 이름
     var myNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -104,7 +104,7 @@ class MyPageViewController: UIViewController {
     // MARK: - profile 메일
     var myEmail: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -120,8 +120,8 @@ class MyPageViewController: UIViewController {
     // MARK: - 장바구니
     var cartName: UILabel = {
         let label = UILabel()
-        label.text = "✨장바구니✨"
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.text = "🖥️ 장바구니"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -129,7 +129,7 @@ class MyPageViewController: UIViewController {
     // MARK: - 테이블 뷰 추가
     var cartTableView: UITableView = {
         let tableView = UITableView()
-        tableView.layer.cornerRadius = 5
+        tableView.layer.cornerRadius = 15
         tableView.clipsToBounds = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -139,7 +139,7 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
                 
         profileUI()
-        
+        view.backgroundColor = #colorLiteral(red: 0.960784018, green: 0.9607844949, blue: 0.9693934321, alpha: 1)
         cartTableView.dataSource = self
         cartTableView.rowHeight = 90
         // 셀 클래스 등록
@@ -157,7 +157,7 @@ class MyPageViewController: UIViewController {
     
     // MARK: - 프로필 가져오기
     func getProfile() {
-        let myProfile = MyProfile(name: "애플", email: "apple@apple.com", image: UIImage(named: "myProfile"))
+        let myProfile = MyProfile(name: "파인애플", email: "fineapple@fineapple.com", image: UIImage(named: "myProfile"))
         myNameLabel.text = myProfile.name + " 님, 안녕하세요."
         myImageView.image = myProfile.image
         myEmail.text = myProfile.email
