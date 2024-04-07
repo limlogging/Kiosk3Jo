@@ -14,7 +14,7 @@ Apple 제품을 빠르고 간편하게 쇼핑하자! Fine Apple Store!
 
 Apple 제품에대한 소식을 빠르게, 편하게, 싸게 구입 할 수 있는 Fine Apple Store입니다.
 
-새로내운 제품은 물론 제품 정보도 한눈에 간편하게!
+새로나온 제품은 물론 제품 정보도 한눈에 간편하게!
 
 ## Demo
 <p float="left">
