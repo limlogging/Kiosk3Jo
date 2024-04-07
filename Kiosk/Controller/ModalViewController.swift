@@ -107,12 +107,10 @@ class ModalViewController: UIViewController {
         
         tableView.reloadData()
         getData()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
-
         getData()
     }
 
@@ -174,8 +172,6 @@ class ModalViewController: UIViewController {
             cancelButton.leadingAnchor.constraint(equalTo: orderButton.trailingAnchor, constant: buttonView.bounds.width * 0.05),   //왼쪽 간격 5%
             cancelButton.widthAnchor.constraint(equalTo: buttonView.widthAnchor, multiplier: 0.3)   //width를 viwe의 30%로 지정
         ]
-        
-        
         NSLayoutConstraint.activate(priceLabelConstraints)
         NSLayoutConstraint.activate(countLabelConstraints)
         NSLayoutConstraint.activate(tableViewConstraints)
@@ -262,9 +258,14 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.titleLabel.text = ListManager.shared.list[currentLocation].name
         cell.itemImage.image = ListManager.shared.list[currentLocation].image
-        cell.priceLabel.text = numberFormatter.string(from: ListManager.shared.list[currentLocation].price as NSNumber)
-        cell.valueLabel.text = String(ListManager.shared.list[currentLocation].value)
         
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        if let formattedPrice = numberFormatter.string(from: NSNumber(value: ListManager.shared.list[indexPath.row].price)) {
+            cell.priceLabel.text = formattedPrice + "원"
+        }
+        
+        cell.valueLabel.text = String(ListManager.shared.list[currentLocation].value)
         cell.minusBtn.tag = currentLocation
         cell.plusBtn.tag = currentLocation
         cell.deleteBtn.tag = currentLocation
@@ -290,7 +291,6 @@ extension ModalViewController: UITableViewDelegate, UITableViewDataSource {
                 currentValue = 1
             }
         }
-        
     }
     
     // MARK: - + 버튼 이벤트

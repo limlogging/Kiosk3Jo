@@ -148,7 +148,7 @@ class ProductViewController: UIViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 // 사이드 메뉴를 화면에 표시.
                 modalVC.view.frame = CGRect(x: 0, y: self.view.frame.height - menuHeight, width: menuWidth, height: menuHeight)
-
+                self.dimmingView?.alpha = 0.7
             })
         } else { // 제품이 없을때 장바구니 클릭시 alert 발생
             let alert = UIAlertController(title: "현재 상품이 없습니다", message: "제품을 담아주세요", preferredStyle: .alert)
