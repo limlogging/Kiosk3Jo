@@ -195,7 +195,7 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         if product.isNew {
             cell.newLabel.isHidden = false
-            cell.newLabel.blink()
+//            cell.newLabel.blink()
         } else {
             cell.newLabel.isHidden = true
         }
@@ -235,21 +235,21 @@ extension ProductViewController: UISearchBarDelegate {
 }
 
 // MARK: - 깜빡이는 효과를 주어 신상품을 강조.
-extension UIView {
-    func blink() {
-        self.alpha = 0.7;
-        UIView.animate(withDuration: 0.5, //Time duration you want,
-                       delay: 0.0,
-                       options: [.curveEaseInOut, .autoreverse, .repeat],
-                       animations: { [weak self] in self?.alpha = 0.0 },
-                       completion: { [weak self] _ in self?.alpha = 1.0 })
-    }
-    
-    func stopBlink() {
-        layer.removeAllAnimations()
-        alpha = 1
-    }
-}
+//extension UIView {
+//    func blink() {
+//        self.alpha = 0.7;
+//        UIView.animate(withDuration: 0.5, //Time duration you want,
+//                       delay: 0.0,
+//                       options: [.curveEaseInOut, .autoreverse, .repeat],
+//                       animations: { [weak self] in self?.alpha = 0.0 },
+//                       completion: { [weak self] _ in self?.alpha = 1.0 })
+//    }
+//    
+//    func stopBlink() {
+//        layer.removeAllAnimations()
+//        alpha = 1
+//    }
+//}
 
 // MARK: - 장바구니 추가 이벤트를 처리할 Delegate 채택
 extension ProductViewController: AddToCartDelegate {

@@ -17,7 +17,7 @@ class MyPageViewController: UIViewController {
     }()
     
     var topLogo: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "apple.logo"))
+        let imageView = UIImageView(image: UIImage(named: "pineappleLogo"))
         imageView.tintColor = .black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -192,6 +192,8 @@ class MyPageViewController: UIViewController {
             topView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.075),
             
             topLogo.centerYAnchor.constraint(equalTo: topView.centerYAnchor),
+            topLogo.widthAnchor.constraint(equalToConstant: 50),
+            topLogo.heightAnchor.constraint(equalToConstant: 50),
             topLogo.leadingAnchor.constraint(equalTo: topView.leadingAnchor, constant: view.bounds.width * 0.05),
             
             topSearch.centerYAnchor.constraint(equalTo: topView.centerYAnchor),

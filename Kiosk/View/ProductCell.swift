@@ -60,10 +60,10 @@ class ProductCell: UICollectionViewCell {
     // MARK: - 장바구니 추가 버튼
     private lazy var cartAddButton: UIButton = {
         let button = UIButton()
-        button.setImage(.init(systemName: "archivebox.fill"), for: .normal)
+        button.setImage(.init(systemName: "cart.badge.plus"), for: .normal)
         button.addTarget(self, action: #selector(addToCart(_: )), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .black
+//        button.tintColor = .blue
         return button
     }()
     

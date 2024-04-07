@@ -84,6 +84,7 @@ class MyPageCartTableViewCell: UITableViewCell {
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             productImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             productImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3),
+            productImage.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.9),
             
             productName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             productName.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 5),
