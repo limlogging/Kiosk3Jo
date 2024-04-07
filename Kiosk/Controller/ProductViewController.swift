@@ -104,7 +104,7 @@ class ProductViewController: UIViewController {
     private func addDimmingView() {
         // 어둑해지는 화면을 구현
         dimmingView = UIView(frame: self.view.bounds)
-        dimmingView?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        dimmingView?.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         dimmingView?.isHidden = true
         view.addSubview(dimmingView!)
         
@@ -144,15 +144,13 @@ class ProductViewController: UIViewController {
             
             // 어두운 배경 뷰를 보이게 한다.
             self.dimmingView?.isHidden = false
-            self.dimmingView?.alpha = 0.6
             
             UIView.animate(withDuration: 0.3, animations: {
                 // 사이드 메뉴를 화면에 표시.
                 modalVC.view.frame = CGRect(x: 0, y: self.view.frame.height - menuHeight, width: menuWidth, height: menuHeight)
-                // 어두운 배경 뷰의 투명도를 조절.
-                self.dimmingView?.alpha = 0.5
+
             })
-        } else {
+        } else { // 제품이 없을때 장바구니 클릭시 alert 발생
             let alert = UIAlertController(title: "현재 상품이 없습니다", message: "제품을 담아주세요", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .default))
             self.present(alert, animated: true)
@@ -174,7 +172,7 @@ class ProductViewController: UIViewController {
 extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: - 컬렉션 뷰 선택하면 디테일 화면으로 이동
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "detailViewID") as? DetailViewController {
+        if let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "detailViewID") as? DetailViewController {
             
             detailVC.tempCategory = filteredProducts[indexPath.item].category   //카테고리명 전달
             detailVC.tempProduct = filteredProducts //제품 정보 전달
@@ -189,13 +187,15 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     // MARK: - collectionView 셀 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentName, for: indexPath) as! ProductCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentName, for: indexPath) as? ProductCell else {
+            return UICollectionViewCell()
+        }
+        
         let product = filteredProducts[indexPath.item]
         cell.configure(with: product)
         
         if product.isNew {
             cell.newLabel.isHidden = false
-            cell.newLabel.blink()
         } else {
             cell.newLabel.isHidden = true
         }
@@ -231,23 +231,6 @@ extension ProductViewController: UISearchBarDelegate {
             filteredProducts = dataManager.products.filter{$0.name.contains(searchText)}
             mainCollectionView.reloadData()
         }
-    }
-}
-
-// MARK: - 깜빡이는 효과를 주어 신상품을 강조.
-extension UIView {
-    func blink() {
-        self.alpha = 0.7;
-        UIView.animate(withDuration: 0.5, //Time duration you want,
-                       delay: 0.0,
-                       options: [.curveEaseInOut, .autoreverse, .repeat],
-                       animations: { [weak self] in self?.alpha = 0.0 },
-                       completion: { [weak self] _ in self?.alpha = 1.0 })
-    }
-    
-    func stopBlink() {
-        layer.removeAllAnimations()
-        alpha = 1
     }
 }
 

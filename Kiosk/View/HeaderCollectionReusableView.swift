@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
         
-    static let identifier = "HeaderCollectionReusableView"
+    //static let identifier = "HeaderCollectionReusableView"
     
     private let label: UILabel = {
        let label = UILabel()
